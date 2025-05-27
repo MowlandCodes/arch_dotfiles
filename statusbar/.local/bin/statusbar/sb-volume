@@ -1,0 +1,28 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) pavucontrol ;;
+esac
+
+# Check volume, and give the responsible icon for the volume
+function sb_volume() {
+    # Check for volume level
+    volume=$(amixer get Master | egrep -o '[0-9]{1,3}%' 2>/dev/null | sed 's/%//g')
+
+    if [[ $volume -gt 80 ]]; then
+        icon="^c#40ff89^ ^d^"
+        dunstify -a "volume" "Volume: $volume%" --icon="volume-high-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
+    elif [[ $volume -gt 40 ]] && [[ $volume -lt 80 ]]; then
+        icon="^c#eac96c^ ^d^"
+        dunstify -a "volume" "Volume: $volume%" --icon="volume-low-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
+    elif [[ $volume -gt 0 ]] && [[ $volume -lt 40 ]]; then
+        icon="^c#eac96c^ ^d^"
+        dunstify -a "volume" "Volume: $volume%" --icon="volume-off-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
+    else
+        icon="^c#ba000a^ ^d^"
+        dunstify -a "volume" "Volume: $volume%" --icon="volume-xmark-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
+    fi 
+}
+
+sb_volume
+echo "$icon $volume%"

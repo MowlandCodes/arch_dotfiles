@@ -1,0 +1,26 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) clk-wifi;;
+esac
+
+IFNAME=$(nmcli -t -f device,type,state,connection d status | grep ":connected:" | awk -F':' '{print $1}')
+CONN_TYPE=$(nmcli -t -f device,type,state,connection d status | grep ":connected:" | awk -F':' '{print $2}')
+
+# Check for device connection
+if [[ "$CONN_TYPE" == "ethernet" ]]; then
+    echo "^c#22FFBB^ 󰈀 ^d^"
+elif [[ "$CONN_TYPE" == "wifi" ]]; then
+    WIFI_STRENGTH=$(nmcli -t -f in-use,signal d wifi list | grep '*:' | awk -F':' '{print $3}')
+    if [[ $WIFI_STRENGTH -ge 0 ]] && [[ $WIFI_STRENGTH -lt 25 ]]; then
+        echo "^c#e26c1b^ 󰤟 ^d^"
+    elif [[ $WIFI_STRENGTH -ge 25 ]] && [[ $WIFI_STRENGTH -lt 50 ]]; then
+        echo "^c#ffb046^ 󰤢 ^d^"
+    elif [[ $WIFI_STRENGTH -ge 50 ]] && [[ $WIFI_STRENGTH -lt 75 ]]; then
+        echo "^c#f7d900^ 󰤥 ^d^"
+    elif [[ $WIFI_STRENGTH -ge 75 ]]; then
+        echo "^c#22FFBB^ 󰤨 ^d^"
+    fi
+else
+    echo "^c#FF0000^  ^d^"
+fi

@@ -1,0 +1,44 @@
+[global]
+font = JetBrainsMono Nerd Font 10
+width = (300,500)
+frame_color = "#8aadf4"
+separator_color= frame
+highlight = "#8aadf4"
+follow = mouse
+padding = 18
+horizontal_padding = 18
+frame_width = 1
+gap_size = 5
+origin = top-right
+progress_bar = true
+progress_bar_height = 5
+progress_bar_corner_radius = 2
+line_height = 5
+markup = full
+show_age_threshold = -1
+stack_duplicates = true
+corner_radius = 15
+format = "<b><i>%s</i></b>\n%b"
+sort = true
+offset = (10, 40)
+alignment = left
+vertical_alignment = center
+notification_limit = 7
+max_icon_size = 32
+icon_path = /home/mowlandcodes/.local/share/icons/UI-Icons/
+
+[urgency_low]
+background = "#24273a"
+foreground = "#cad3f5"
+timeout = 10
+
+[urgency_normal]
+background = "#24273a"
+foreground = "#cad3f5"
+timeout = 5
+
+[urgency_critical]
+background = "#24273a"
+foreground = "#cad3f5"
+frame_color = "#f5a97f"
+timeout = 15

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) setsid -f "st" -e btop ;;
+esac
+
+echo $(free -h | awk '/^Mem/ {print $3"/"$2}' | sed 's/i//g')
