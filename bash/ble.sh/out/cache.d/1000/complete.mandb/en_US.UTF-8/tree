@@ -1,0 +1,66 @@
+-a All files are printed. By default tree does not print hidden files (those beginning with a dot ‘.'). In no event does tree print the file system constructs ‘.' (current directory) and ‘..' (previous directory).
+-A Turn on ANSI line graphics hack when printing the indentation lines.
+--authority[=]hostname|authority=Sets the authority (hostname) to use for the OSC 8 hyperlinks. By default the local hostname of the machine as returned by gethostname() is used as the authority. A dot ([1m.[22m) or a set of ""'s, sans '=', (i.e. the empty string) can be used to indicate a null authority.
+--charset[=]charset=Set the character set to use when outputting HTML and for line drawing.
+-c Sort the output by last status change instead of alphabetically. Modifies the [1m-D [22moption (if used) to print the last status change instead of modification time.
+-C Turn colorization on always, using built-in color defaults if the LS_COLORS or TREE_COLORS environment variables are not set. Useful to colorize output to a pipe.
+--device Prints the device number to which the file or directory belongs
+--dirsfirst List directories before files. This is a meta-sort that alters the above sorts. This option is disabled when [1m-U [22mis used.
+-d List directories only.
+-D Print the date of the last modification time or if [1m-c [22mis used, the last status change time for the file listed.
+--du For each directory report its size as the accumulation of sizes of all its files and sub-directories (and their files, and so on). The total amount of used space is also given in the final report (like the 'du -c' command.) This option requires tree to read the entire directory tree before emitting it, see [1mBUGS AND NOTES [22mbelow. Implies [1m-s[22m.
+-F Append a ‘/' for directories, a ‘=' for socket files, a ‘*' for executable files, a ‘>' for doors (Solaris) and a ‘|' for FIFO's, as per ls -F
+--fflinks Processes symbolic link information found in a file, as from the output of [1m'tree -fi --noreport'[22m. Only the first occurrence of the string [1m' -> ' [22mis used to denote the separation of the filename from the link.
+--filelimit[=]#=Do not descend directories that contain more than [4m#[24m entries.
+--filesfirst List files before directories. This is a meta-sort that alters the above sorts. This option is disabled when [1m-U [22mis used.
+-f Prints the full path prefix for each file.
+--fromfile Reads a directory listing from a file rather than the file-system. Paths provided on the command line are files to read from rather than directories to search. The dot (.) directory indicates that tree should read paths from standard input. NOTE: this is only suitable for reading the output of a program such as find, not 'tree -fi' as symlinks are not distinguished from files that simply contain ' -> ' as part of the filename unless the [1m--fflinks [22moption is used.
+--fromtabfile Like [1m--fromfile[22m, tree reads a directory tree from a text file where the files are tab indented in a tree like format to indicate the directory nesting level.
+--gitfile[=]file=Use [4mfile[24m explicitly as a gitignore file.
+--gitignore Uses git [1m.gitignore [22mfiles for filtering files and directories. Also uses [1m$GIT_DIR/info/exclude [22mif present.
+-g Print the group name, or GID # if no group name is available, of the file.
+-H [-]baseHREF Turn on HTML output, including HTTP references. Useful for ftp sites. [4mbaseHREF[24m gives the base ftp location when using HTML output. That is, the local directory may be ‘/local/ftp/pub', but it must be referenced as ‘ftp://hostname.organization.domain/pub' ([4mbaseHREF[24m should be ‘ftp://hostname.organization.domain'). If [4mbaseHREF[24m begins with a dash ([1m-[22m), then the dash is removed and indicates that tree should remove the first directory name from the href URL. Hint: don't use ANSI lines with this option, and don't give more than one directory in the directory list. If you wish to use colors via CSS style-sheet, use the -C option in addition to this option to force color output.
+--help Outputs a verbose usage listing.
+--hintro[=]file=Use [4mfile[24m as the HTML intro in place of the default one. Use an empty file or [4m/dev/null[24m to eliminate the intro altogether.
+--houtro[=]file=Use [4mfile[24m as the HTML outro in place of the default one. Use an empty file or [4m/dev/null[24m to eliminate the outro altogether.
+-h Print the size of each file but in a more human readable way, e.g. appending a size letter for kilobytes (K), megabytes (M), gigabytes (G), terabytes (T), petabytes (P) and exabytes (E).
+--hyperlink Enable OSC 8 terminal hyperlinks for terminals that support them. See [1mBUGS AND NOTES [22mbelow.
+--ignore-case If a match pattern is specified by the [1m-P [22mor [1m-I [22moption, this will cause the pattern to match without regard to the case of each letter.
+-i Makes tree not print the indentation lines, useful when used in conjunction with the [1m-f [22moption. Also removes as much whitespace as possible when used with the [1m-J [22mor [1m-X [22moptions.
+--infofile[=]file=Use [4mfile[24m explicitly as a info file.
+--info Prints file comments found in .info files. See [1m.INFO FILES [22mbelow for more information on the format of .info files.
+--inodes Prints the inode number of the file or directory
+-I pattern Do not list those files that match the wild-card [4mpattern[24m. You may have multiple -I options. See [4m-P[24m above for information on wildcard patterns.
+-J Turn on JSON output. Outputs the directory tree as a JSON formatted array.
+-l Follows symbolic links if they point to directories, as if they were directories. Symbolic links that will result in recursion are avoided when detected.
+-L level Max display depth of the directory tree.
+--matchdirs If a match pattern is specified by the [1m-P [22moption, this will cause the pattern to be applied to directory names (in addition to filenames). In the event of a match on the directory name, matching is disabled for the directory's contents. If the [1m--prune [22moption is used, empty folders that match the pattern will not be pruned.
+--metafirst Print the meta-data information at the beginning of the line rather than after the indentation lines.
+--nolinks Turns off hyperlinks in HTML output.
+--noreport Omits printing of the file and directory report at the end of the tree listing.
+-N Print non-printable characters as is instead of as escaped octal numbers.
+-n Turn colorization off always, over-ridden by the [1m-C [22moption, however overrides CLICOLOR_FORCE if present.
+-o filename Send output to [4mfilename[24m.
+-- Option processing terminator. No further options will be processed after this.
+--opt-toggle Enables option "toggling". Turns on the ability to toggle options such as -a, -h, etc. Useful to add to an alias when you wish to disable options enabled in the alias.
+-P pattern List only those files that match the wild-card [4mpattern[24m. You may have multiple -P options. Note: you must use the [4m-a[24m option to also consider those files beginning with a dot ‘.' for matching. Valid wildcard operators are ‘*' (any zero or more characters), ‘**‘ (any zero or more characters as well as null /'s, i.e. /**/ may match a single /), ‘?' (any single character), ‘[...]' (any single character listed between brackets (optional - (dash) for character range may be used: ex: [A-Z]), and ‘[^...]' (any single character not listed in brackets) and ‘|' separates alternate patterns. A '/' at the end of the pattern matches directories, but not files.
+-p Print the file type and permissions for each file (as per ls -l).
+--prune Makes tree prune empty directories from the output, useful when used in conjunction with [1m-P [22mor [1m-I[22m. See [1mBUGS AND NOTES [22mbelow for more information on this option.
+-q Print non-printable characters in filenames as question marks instead of the default.
+-Q Quote the names of files in double quotes.
+-R Recursively cross down the tree each [4mlevel[24m directories (see [1m-L [22moption), and at each level outputting to a file named [1m00Tree.html [22m(ala [1m-o[22m).
+-r Sort the output in reverse order. This is a meta-sort that alters the above sorts. This option is disabled when [1m-U [22mis used.
+--scheme[=]schema=Sets the schema used in the OSC 8 hyperlinks. The default schema is '[1mfile://[22m'. If the schema omits the colon (:), then [1m:// [22mwill be appended to the schema.
+--si Like [1m-h [22mbut use SI units (powers of 1000) instead.
+--sort[=]type=Sort the output by [4mtype[24m instead of name. Possible values are: [1mctime [22m([1m-c[22m), [1mmtime [22m([1m-t), size[22m, [1mversion [22m([1m-v[22m) or [1mnone [22m([1m-U[22m).
+-s Print the size of each file in bytes along with the name.
+-S Turn on CP437 line graphics (useful when using Linux console mode fonts). This option is now equivalent to ‘[1m--charset=IBM437[22m' and may eventually be depreciated.
+--timefmt[=]format=Prints (implies -D) and formats the date according to the format string which uses the [1mstrftime[22m(3) syntax.
+-t Sort the output by last modification time instead of alphabetically.
+-T title Sets the title and H1 header string in HTML output mode.
+-U Do not sort. Lists files in directory order. Disables [1m--dirsfirst[22m.
+-u Print the username, or UID # if no username is available, of the file.
+--version Outputs the version of tree.
+-v Sort the output by version.
+-x Stay on the current file-system only. Ala [1mfind [4m[22m-xdev[24m[1m.[0m
+-X Turn on XML output. Outputs the directory tree as an XML formatted file.

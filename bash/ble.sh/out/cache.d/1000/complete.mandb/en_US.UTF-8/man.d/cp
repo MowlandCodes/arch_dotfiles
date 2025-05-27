@@ -1,0 +1,51 @@
+--archive [1m[[0;36m-a[0;1m][m same as [1m-dR --preserve[22m=[4mall[0m
+-a same as [1m-dR --preserve[22m=[4mall[0m
+--attributes-only don't copy the file data, just the attributes
+--backup[=CONTROL]=make a backup of each existing destination file
+-b like [1m--backup [22mbut does not accept an argument
+--context[=CTX]=like [1m-Z[22m, or if CTX is specified then set the SELinux or SMACK security context to CTX
+--copy-contents copy contents of special files when recursive
+--debug explain how a file is copied. Implies [1m-v[0m
+--dereference [1m[[0;36m-L[0;1m][m always follow symbolic links in SOURCE
+-d same as [1m--no-dereference --preserve[22m=[4mlinks[0m
+-f if an existing destination file cannot be opened, remove it and try again (this option is ignored when the [1m-n [22moption is also used)
+--force [1m[[0;36m-f[0;1m][m if an existing destination file cannot be opened, remove it and try again (this option is ignored when the [1m-n [22moption is also used)
+--help display this help and exit
+-H follow command-line symbolic links in SOURCE
+--interactive [1m[[0;36m-i[0;1m][m prompt before overwrite (overrides a previous [1m-n [22moption)
+-i prompt before overwrite (overrides a previous [1m-n [22moption)
+--keep-directory-symlink follow existing symlinks to directories
+-L always follow symbolic links in SOURCE
+-l hard link files instead of copying
+--link [1m[[0;36m-l[0;1m][m hard link files instead of copying
+-n (deprecated) silently skip existing files. See also [1m--update[0m
+--no-clobber [1m[[0;36m-n[0;1m][m (deprecated) silently skip existing files. See also [1m--update[0m
+--no-dereference [1m[[0;36m-P[0;1m][m never follow symbolic links in SOURCE
+--no-preserve=ATTR_LIST=don't preserve the specified attributes
+--no-target-directory [1m[[0;36m-T[0;1m][m treat DEST as a normal file
+--one-file-system [1m[[0;36m-x[0;1m][m stay on this file system
+--parents use full source file name under DIRECTORY
+-P never follow symbolic links in SOURCE
+--preserve[=ATTR_LIST]=preserve the specified attributes
+-p same as [1m--preserve[22m=[4mmode[24m,ownership,timestamps
+-r copy directories recursively
+-R copy directories recursively
+--recursive [1m[[0;36m-r[0;1m][m copy directories recursively
+--reflink[=WHEN]=control clone/CoW copies. See below
+--remove-destination remove each existing destination file before attempting to open it (contrast with [1m--force[22m)
+-s make symbolic links instead of copying
+--sparse=WHEN=control creation of sparse files. See below
+-S SUFFIX override the usual backup suffix
+--strip-trailing-slashes remove any trailing slashes from each SOURCE argument
+--suffix=SUFFIX=[1m[[0;36m-S[0;1m][m override the usual backup suffix
+--symbolic-link [1m[[0;36m-s[0;1m][m make symbolic links instead of copying
+--target-directory=DIRECTORY=[1m[[0;36m-t[0;1m][m copy all SOURCE arguments into DIRECTORY
+-t DIRECTORY copy all SOURCE arguments into DIRECTORY
+-T treat DEST as a normal file
+-u equivalent to [1m--update[22m[=[4molder[24m]. See below
+--update[=UPDATE]=control which existing files are updated.
+--verbose [1m[[0;36m-v[0;1m][m explain what is being done
+--version output version information and exit
+-v explain what is being done
+-x stay on this file system
+-Z set SELinux security context of destination file to default type

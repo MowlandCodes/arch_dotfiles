@@ -1,0 +1,17 @@
+--dir [1m[[0;36m-d[0;1m][m remove empty directories
+-d remove empty directories
+-f ignore nonexistent files and arguments, never prompt
+--force [1m[[0;36m-f[0;1m][m ignore nonexistent files and arguments, never prompt
+--help display this help and exit
+--interactive[=WHEN]=prompt according to WHEN: never, once ([1m-I[22m), or always ([1m-i[22m).
+-i prompt before every removal
+-I prompt once before removing more than three files, or when removing recursively.
+--no-preserve-root do not treat '/' specially
+--one-file-system when removing a hierarchy recursively, skip any directory that is on a file system different from that of the corresponding command line argument
+--preserve-root[=all]=do not remove '/' (default).
+--recursive [1m[[0;36m-R[0;1m][m remove directories and their contents recursively
+-r remove directories and their contents recursively
+-R remove directories and their contents recursively
+--verbose [1m[[0;36m-v[0;1m][m explain what is being done
+--version output version information and exit
+-v explain what is being done

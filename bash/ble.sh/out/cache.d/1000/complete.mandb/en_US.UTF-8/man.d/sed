@@ -1,0 +1,26 @@
+--debug annotate program execution
+-e script add the script to the commands to be executed
+-E use extended regular expressions in the script (for portability use POSIX [1m-E[22m).
+--expression=script=[1m[[0;36m-e[0;1m][m add the script to the commands to be executed
+--file=script-file=[1m[[0;36m-f[0;1m][m add the contents of script-file to the commands to be executed
+--follow-symlinks follow symlinks when processing in place
+-f script-file add the contents of script-file to the commands to be executed
+--help display this help and exit
+--in-place[=SUFFIX]=[1m[[0;36m-i[0;1m][m edit files in place (makes backup if SUFFIX supplied)
+-i[SUFFIX]edit files in place (makes backup if SUFFIX supplied)
+--line-length=N=[1m[[0;36m-l[0;1m][m specify the desired line-wrap length for the ‘l' command
+-l N specify the desired line-wrap length for the ‘l' command
+-n suppress automatic printing of pattern space
+--null-data [1m[[0;36m-z[0;1m][m separate lines by NUL characters
+--posix disable all GNU extensions.
+--quiet [1m[[0;36m-n[0;1m][m suppress automatic printing of pattern space
+--regexp-extended [1m[[0;36m-r[0;1m][m use extended regular expressions in the script (for portability use POSIX [1m-E[22m).
+-r use extended regular expressions in the script (for portability use POSIX [1m-E[22m).
+--sandbox operate in sandbox mode (disable e/r/w commands).
+-s consider files as separate rather than as a single, continuous long stream.
+--separate [1m[[0;36m-s[0;1m][m consider files as separate rather than as a single, continuous long stream.
+--silent suppress automatic printing of pattern space
+-u load minimal amounts of data from the input files and flush the output buffers more often
+--unbuffered [1m[[0;36m-u[0;1m][m load minimal amounts of data from the input files and flush the output buffers more often
+--version output version information and exit
+-z separate lines by NUL characters

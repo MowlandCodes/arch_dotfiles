@@ -1,0 +1,15 @@
+-B Display bandwidth rates in bytes/sec rather than bits/sec.
+-b Don't display bar graphs of traffic.
+-c config file Specifies an alternate config file. If not specified, iftop will use [1m~/.iftoprc [22mif it exists. See below for a description of config files
+-f filter code Use [4mfilter[24m [4mcode[24m to select the packets to count. Only IP packets are ever counted, so the specified code is evaluated as [1m([4m[22mfilter[24m [4mcode[24m[1m) and ip[22m.
+-F net/mask Specifies an IPv4 network for traffic analysis. If specified, iftop will only include packets flowing in to or out of the given network, and packet direction is determined relative to the network boundary, rather than to the interface. You may specify [4mmask[24m as a dotted quad, such as /255.255.255.0, or as a single number specifying the number of bits set in the netmask, such as /24.
+-G net6/mask6 Specifies an IPv6 network for traffic analysis. The value of [4mmask6[24m can be given as a prefix length or as a numerical address string for more compound bitmasking.
+-h Print a summary of usage.
+-i interface Listen to packets on [4minterface[24m.
+-l Display and count datagrams addressed to or from link-local IPv6 addresses. The default is not to display that address category.
+-m limit Set the upper limit for the bandwidth scale. Specified as a number with a 'K', 'M' or 'G' suffix.
+-N Do not resolve port number to service names
+-n Don't do hostname lookups.
+-p Run in promiscuous mode, so that traffic which does not pass directly through the specified interface is also counted.
+-P Turn on port display.
+-t text output mode Use text interface without ncurses and print the output to STDOUT.

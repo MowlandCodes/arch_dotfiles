@@ -1,0 +1,21 @@
+--cachedir=dir=Change the cache directory of ranger from $XDG_CACHE_HOME or ~/.cache/ranger to dir.
+-c Activate the clean mode: ranger will not access or create any configuration files nor will it leave any traces on your system. This is useful when your configuration is broken, when you want to avoid clutter, etc.
+--choosedir=targetfile=Allows you to pick a directory with ranger. When you exit ranger, it will write the last visited directory into [4mtargetfile[24m.
+--choosefiles=targetfile=Allows you to pick multiple files with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute paths of all selected files into [4mtargetfile[24m, adding one newline after each filename.
+--choosefile=targetfile=Allows you to pick a file with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute path of that file into [4mtargetfile[24m.
+--clean [1m[[0;36m-c[0;1m][m Activate the clean mode: ranger will not access or create any configuration files nor will it leave any traces on your system. This is useful when your configuration is broken, when you want to avoid clutter, etc.
+--cmd=command=Execute the command after the configuration has been read. Use this option multiple times to run multiple commands.
+--confdir=dir=[1m[[0;36m-r[0;1m][m Change the configuration directory of ranger from $XDG_CONFIG_HOME or ~/.config/ranger to dir.
+--copy-config=file=Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten. Possible values: [4mall[24m, [4mcommands[24m, [4mcommands_full[24m, [4mrc[24m, [4mrifle[24m, [4mscope[24m. Note: You may want to disable loading of the global configuration files by exporting [4mRANGER_LOAD_DEFAULT_RC=FALSE[24m in your environment. See also: [1mFILES[22m, [1mENVIRONMENT [22m--copy-config=[1mcommands [22mwill copy only a small sample configuration file with a thoroughly commented example. It is recommended to keep this file tidy to avoid getting defunct commands on ranger upgrades. The full default commands.py can be copied with --copy-config=[1mcommands_full[22m, but that file will be ignored by ranger and serves only as a reference for making your own commands.
+--datadir=dir=Change the data directory of ranger from $XDG_DATA_HOME or ~/.local/share/ranger to dir.
+--debug [1m[[0;36m-d[0;1m][m Print a list of options and exit.
+-d Print a list of options and exit.
+--help [1m[[0;36m-h[0;1m][m Print a list of options and exit.
+-h Print a list of options and exit.
+--list-tagged-files=tag=List all files which are tagged with the given tag. Note: Tags are single characters. The default tag is *
+--list-unused-keys List common keys which are not bound to any action in the browser context. This list is not complete, you can bind any key that is supported by curses: use the key code returned by getch().
+--profile Print statistics of CPU usage on exit.
+-r dir Change the configuration directory of ranger from $XDG_CONFIG_HOME or ~/.config/ranger to dir.
+--selectfile=targetfile=Open ranger with [4mtargetfile[24m selected. This is a legacy option, superseded by the behavior for the POSITIONAL ARGUMENTS.
+--show-only-dirs Display only the directories. May be used in conjunction with [1m--choosedir[22m=[4mtargetfile[24m.
+--version Print the version and exit.

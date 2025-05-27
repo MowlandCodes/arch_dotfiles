@@ -1,0 +1,71 @@
+-auto-select When one entry is left, automatically select it.
+-cache-dir filename Directory that is used to place temporary files, like history.
+-case-sensitive Start in case-sensitive mode. This option can be changed at run-time using the [1m-kb-toggle-case-sensitivity [22mkey binding.
+-case-smart Start in case-smart mode behave like vim’s [1msmartcase[22m, which determines case-sensitivity by input. When enabled, this will suppress [1m-case-sensitive [22mconfig.
+-combi-display-format The format string for entries in the [1mcombi [22mdialog:
+-combi-modes mode1,mode2 The modes to combine in combi mode. For syntax to [1m-combi-modes[22m, see [1m-modes[22m. To get one merge view, of [1mwindow[22m,[1mrun[22m, and [1mssh[22m:
+-config filename Load an alternative configuration file.
+-cycle Cycle through the result list. Default is ‘true'.
+-display display The X server to contact. Default is [1m$DISPLAY[22m.
+-display-{mode} string Set the name to use for mode. This is used as prompt and in combi-browser.
+-dmenu Run [1mrofi [22min dmenu mode. This allows for interactive scripts. In [1mdmenu [22mmode, [1mrofi [22mreads from STDIN, and output to STDOUT. A simple example, displaying three pre-defined options:
+-dpi number Override the default DPI setting.
+-drun-categories category1,category2 Only show desktop files that are present in the listed categories.
+-drun-display-format The format string for the [1mdrun [22mdialog:
+-drun-exclude-categories category1,category2 Exclude desktop files that are present in the listed categories.
+-drun-match-fields field1,field2,... When using [1mdrun[22m, match only with the specified Desktop entry fields. The different fields are:
+-drun-reload-desktop-cache If [1mdrun-use-desktop-cache [22mis enabled, rebuild a cache with the content of desktop files.
+-drun-url-launcher command Command to open a Desktop Entry that is a Link.
+-drun-use-desktop-cache Build and use a cache with the content of desktop files. Usable for systems with slow hard drives.
+-dump-config Dump the current active configuration, in rasi format, to stdout and exit. Information about the rasi format can be found in the [1mrofi-theme(5) [22mmanpage.
+-dump-theme Dump the current active theme, in rasi format, to stdout and exit.
+-eh number Set row height (in chars) Default: [4m1[0m
+-e message Pops up a message dialog (used internally for showing errors) with [4mmessage[24m. Message can be multi-line.
+-filter filter Filter the list by setting text in input bar to [4mfilter[0m
+-fixed-num-lines Keep a fixed number of visible lines.
+-help The help option shows the full list of command-line options and the current set values. These include dynamic (run-time generated) options.
+-hover-select Automatically select the entry the mouse is hovering over. This option is best combined with custom mouse bindings. To utilize hover-select and accept an entry in a single click, use:
+-icon-theme Specify icon theme to be used. If not specified default theme from DE is used, [4mAdwaita[24m and [4mgnome[24m themes act as fallback themes.
+-list-keybindings List all known keybindings without trying to parse them. This can be used to look for duplicate bindings.
+-location Specify where the window should be located. The numbers map to the following locations on screen:
+-markup Use Pango markup to format output wherever possible.
+-matching method Specify the matching algorithm used. Currently, the following methods are supported:
+-matching-negate-char string Set the character used to negate the query (i.e. if it does [1mnot [22mmatch the next keyword). Set to ‘' to disable. It takes the first ASCII character from the string.
+-max-history-size number Maximum number of entries to store in history. Defaults to 25. (WARNING: can cause slowdowns when set too high)
+-m num Select monitor to display [1mrofi [22mon. It accepts as input: [4mprimary[24m (if primary output is set), the [4mxrandr[24m output name, or integer number (in order of detection). Negative numbers are handled differently:
+-modes mode1,mode2 Specify an ordered, comma-separated list of modes to enable. Enabled modes can be changed at runtime. Default key is [1mCtrl+Tab[22m. If no modes are specified, all configured modes will be enabled. To only show the [1mrun [22mand [1mssh [22mlauncher:
+-monitor num Select monitor to display [1mrofi [22mon. It accepts as input: [4mprimary[24m (if primary output is set), the [4mxrandr[24m output name, or integer number (in order of detection). Negative numbers are handled differently:
+-no-lazy-grab Disables lazy grab, this forces the keyboard being grabbed before gui is shown.
+-no-plugins Disable plugin loading.
+-normalize-match Normalize the string before matching, so [1mo [22mwill match [1mö[22m, and [1mé [22mmatches [1me[22m. This is not a perfect implementation, but works. For now, it disables highlighting of the matched part.
+-normal-window Make [1mrofi [22mreact like a normal application window. Useful for scripts like Clerk that are basically an application.
+-[no-]steal-focusMake rofi steal focus on launch and restore close to window that held it when launched.
+-parse-hosts Parse the [1m/etc/hosts [22mfile for entries.
+-pid path Make [1mrofi [22mcreate a pid file and check this on startup. The pid file prevents multiple [1mrofi [22minstances from running simultaneously. This is useful when running [1mrofi [22mfrom a key-binding daemon.
+-plugin-path directory Specify the directory where [1mrofi [22mshould look for plugins.
+-rasi-validate filename Try to parse the file and return 0 when successful, non-zero when failed.
+-refilter-timeout-limit The time (in ms) boundary filter may take before switch from instant to delayed filter mode.
+-replace If rofi is already running, based on pid file, try to kill that instance.
+-run-command cmd Set command ([4m{cmd}[24m) to execute when running an application. See [4mPATTERN[24m.
+-run-list-command cmd If set, use an external tool to generate a list of executable commands. Uses [1mrun-command[22m.
+-run-shell-command cmd Set command to execute when running an application in a shell. See [4mPATTERN[24m.
+-scroll-method method Select the scrolling method. 0: Per page, 1: continuous.
+-selected-row selected row Select a certain row.
+-show-icons Show application icons in [1mdrun [22mand [1mwindow [22mmodes.
+-show mode Open [1mrofi [22min a certain mode. Available modes are [1mwindow[22m, [1mrun[22m, [1mdrun[22m, [1mssh[22m, [1mcombi[22m. The special argument [1mkeys [22mcan be used to open a searchable list of supported key bindings (see the [1mrofi-keys(5) [22mmanpage)
+-sidebar-mode Open in sidebar-mode. In this mode, a list of all enabled modes is shown at the bottom (See [1m-modes [22moption). To show sidebar, use:
+-sorting-method ‘method' to specify the sort method. There are 2 methods:
+-ssh-client client Override the used [1mssh [22mclient.
+-ssh-command cmd Set the command to execute when starting an ssh session. The pattern [4m{host}[24m is replaced by the selected ssh entry.
+-terminal Specify which terminal to start.
+-theme filename Path to the new theme file format. This overrides the old theme settings.
+-theme-str string Allow theme parts to be specified on the command line as an override.
+-threads num Specify the number of threads [1mrofi [22mshould use:
+-tokenize Tokenize the input.
+-transient-window Make [1mrofi [22mreact like a modal dialog that is transient to the currently focused window. Useful when you use a keyboard shortcut to run and show on the window you are working with.
+-version Show the [1mrofi [22mversion and exit.
+-window-command cmd Set command to execute on selected window for an alt action ([1m-kb-accept-alt[22m). See [4mPATTERN[24m.
+-window-format format Format what is being displayed for windows.
+-window-match-fields field1,field2,... When using window mode, match only with the specified fields. The different fields are:
+-window-thumbnail Show window thumbnail (if available) as icon in the window switcher.
+-xserver-i300-workaround Workaround for bug in Xserver. See issue #611 and #1642 on the rofi issue tracker.
