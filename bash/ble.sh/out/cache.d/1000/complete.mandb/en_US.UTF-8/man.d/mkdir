@@ -1,10 +1,0 @@
---context[=CTX]=like [1m-Z[22m, or if CTX is specified then set the SELinux or SMACK security context to CTX
---help display this help and exit
--m MODE set file mode (as in chmod), not a=rwx - umask
---mode=MODE=[1m[[0;36m-m[0;1m][m set file mode (as in chmod), not a=rwx - umask
---parents [1m[[0;36m-p[0;1m][m no error if existing, make parent directories as needed, with their file modes unaffected by any [1m-m [22moption
--p no error if existing, make parent directories as needed, with their file modes unaffected by any [1m-m [22moption
---verbose [1m[[0;36m-v[0;1m][m print a message for each created directory
---version output version information and exit
--v print a message for each created directory
--Z set SELinux security context of each created directory to the default type

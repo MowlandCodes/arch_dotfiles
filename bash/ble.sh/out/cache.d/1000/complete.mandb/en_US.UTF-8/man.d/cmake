@@ -1,103 +1,0 @@
--A <platform-name> Specify platform name if supported by generator.
--B <path-to-build> Path to directory which CMake will use as the root of build directory.
---build <dir> Project binary directory to be built. This is required (unless a preset is specified) and must be first.
---check-system-vars Find problems with variable usage in system files.
--C <initial-cache> Pre-load a script to populate the cache.
---clean-first Build target [1mclean [22mfirst, then build. (To clean only, use [4m--target[24m [4mclean[24m.)
---compile-no-warning-as-error Added in version 3.24.
---component <comp> Component-based install. Only install component [1m<comp>[22m.
---config <cfg> For multi-configuration tools, choose configuration [1m<cfg>[22m.
---debug-find Added in version 3.17.
---debug-find-pkg=<pkg>[,...]=Added in version 3.23.
---debug-find-var=<var>[,...]=Added in version 3.23.
---debugger-dap-log <log path> Logs all debugger communication to the specified file.
---debugger Enables interactive debugging of the CMake language. CMake exposes a debugging interface on the pipe named by [4m--debugger-pipe[24m that conforms to the ]8;;https://microsoft.github.io/debug-adapter-protocol/\[4mDebug[24m [4mAdapter[24m [4mProtocol[24m]8;;\ specification with the following modifications.
---debugger-pipe <pipe name> Name of the pipe (on Windows) or domain socket (on Unix) to use for debugger communication.
---debug-output Put cmake in a debug mode.
---debug-trycompile Do not delete the files and directories created for [4mtry_compile()[24m / [4mtry_run()[24m calls. This is useful in debugging failed checks.
---default-directory-permissions <permissions> Default directory install permissions. Permissions in format [1m<u=rwx,g=rx,o=rx>[22m.
--D <var>:<type>=<value> Create or update a CMake [1mCACHE [22mentry.
--E [help] Run [1mcmake -E [22mor [1mcmake -E help [22mfor a summary of commands.
---files-from=<file>=Added in version 3.1.
---format=<format>=Added in version 3.3.
---fresh Added in version 3.24.
--G <generator-name> Specify a build system generator.
---graphviz=<file>=Generate graphviz of dependencies, see [4mCMakeGraphVizOptions[24m for more.
---help [1m[[0;36m-H[0;1m][m Print usage information and exit.
---help-command <cmd> [<file>] Print help for one command and exit.
---help-command-list [<file>] List commands with help available and exit.
---help-commands [<file>] Print cmake-commands manual and exit.
---help-full [<file>] Print all help manuals and exit.
---help-manual-list [<file>] List help manuals available and exit.
---help-manual <man> [<file>] Print one help manual and exit.
---help-module-list [<file>] List modules with help available and exit.
---help-module <mod> [<file>] Print help for one module and exit.
---help-modules [<file>] Print cmake-modules manual and exit.
---help-policies [<file>] Print cmake-policies manual and exit.
---help-policy <cmp> [<file>] Print help for one policy and exit.
---help-policy-list [<file>] List policies with help available and exit.
--help Print usage information and exit.
---help-properties [<file>] Print cmake-properties manual and exit.
---help-property-list [<file>] List properties with help available and exit.
---help-property <prop> [<file>] Print help for one property and exit.
---help-variable-list [<file>] List variables with help available and exit.
---help-variables [<file>] Print cmake-variables manual and exit.
---help-variable <var> [<file>] Print help for one variable and exit.
--h Print usage information and exit.
--H Print usage information and exit.
---ignore-eol Added in version 3.14.
---install <dir> Project binary directory to install. This is required and must be first.
---install-prefix <directory> Added in version 3.21.
--j [<jobs>] Added in version 3.12.
--L[A][H]List non-advanced cached variables.
---link-no-warning-as-error Added in version 4.0.
---list-presets[=<type>]=Lists the available presets of the specified [1m<type>[22m. Valid values for [1m<type> [22mare [1mconfigure[22m, [1mbuild[22m, [1mtest[22m, [1mpackage[22m, or [1mall[22m. If [1m<type> [22mis omitted, [1mconfigure [22mis assumed. The current working directory must contain CMake preset files unless the [4m-S[24m option is used to specify a different top level source directory.
---log-context Enable the [4mmessage()[24m command outputting context attached to each message.
---log-level=<level>=Added in version 3.16.
--LR[A][H] <regex>Added in version 3.31.
---modify ENVIRONMENT_MODIFICATION Added in version 3.25.
---mtime=<date>=Added in version 3.1.
---no-warn-unused-cli Don't warn about command line options.
--N View mode only.
---parallel [<jobs>] [1m[[0;36m-j[0;1m][m Added in version 3.12.
--- Pass remaining options to the native tool.
--P <cmake-script-file> Process the given cmake file as a script written in the CMake language. No configure or generate step is performed and the cache is not modified. If variables are defined using [1m-D[22m, this must be done before the [1m-P [22margument.
---prefix <prefix> Override the installation prefix, [4mCMAKE_INSTALL_PREFIX[24m.
---preset <preset> Reads a [4mpreset[24m from [1mCMakePresets.json [22mand [1mCMakeUserPresets.json [22mfiles, which must be located in the same directory as the top level [1mCMakeLists.txt [22mfile. The preset may specify the generator, the build directory, a list of variables, and other arguments to pass to CMake. At least one of [1mCMakePresets.json [22mor [1mCMakeUserPresets.json [22mmust be present. The [4mCMake[24m [4mGUI[24m also recognizes and supports [1mCMakePresets.json [22mand [1mCMakeUserPresets.json [22mfiles. For full details on these files, see [4mcmake-presets(7)[24m.
---print-config-dir Added in version 3.31.
---profiling-format=<file>=Enable the output of profiling data of CMake script in the given format.
---profiling-output=<path>=Added in version 3.18.
---project-file <project-file-name> Added in version 4.0.
---resolve-package-references=<value>=Added in version 3.23.
---sarif-output=<path>=Added in version 4.0.
--S <path-to-source> Path to root directory of the CMake project to build.
---strip Strip before installing.
---system-information [file] Dump information about this system.
---target <tgt>... [1m[[0;36m-t[0;1m][m Build [1m<tgt> [22minstead of the default target. Multiple targets may be given, separated by spaces.
---toolchain <path-to-file> Added in version 3.21.
---touch Added in version 3.24.
---trace-expand Put cmake in trace mode.
---trace-format=<format>=Added in version 3.17.
---trace Put cmake in trace mode.
---trace-redirect=<file>=Put cmake in trace mode and redirect trace output to a file instead of stderr.
---trace-source=<file>=Put cmake in trace mode, but output only lines of a specified file.
--t <tgt>... Build [1m<tgt> [22minstead of the default target. Multiple targets may be given, separated by spaces.
--T <toolset-spec> Toolset specification for the generator, if supported.
--U <globbing_expr> Remove matching entries from CMake [1mCACHE[22m.
---unset=NAME=Unsets the current value of [1mNAME[22m.
--usage Print usage information and exit.
---use-stderr Ignored. Behavior is default in CMake >= 3.0.
--v Enable verbose output - if supported - including the build commands to be executed.
---verbose [1m[[0;36m-v[0;1m][m Enable verbose output - if supported - including the build commands to be executed.
---version [<file>] Show program name/version banner and exit. The output is printed to a named [1m<file> [22mif given.
--version [<file>] Show program name/version banner and exit. The output is printed to a named [1m<file> [22mif given.
---warn-uninitialized Warn about uninitialized values.
---warn-unused-vars Does nothing. In CMake versions 3.2 and below this enabled warnings about unused variables. In CMake versions 3.3 through 3.18 the option was broken. In CMake 3.19 and above the option has been removed.
--Wdeprecated Enable deprecated functionality warnings.
--Wdev Enable developer warnings.
--Werror=<what>=Treat CMake warnings as errors. [1m<what> [22mmust be one of the following:
--Wno-deprecated Suppress deprecated functionality warnings.
--Wno-dev Suppress developer warnings.
--Wno-error=<what>=Do not treat CMake warnings as errors. [1m<what> [22mmust be one of the following:
---workflow Select a [4mWorkflow[24m [4mPreset[24m using one of the following options.
---zstd Added in version 3.15.

@@ -1,106 +1,0 @@
--a Assume all targets are from the AUR. Additionally Actions such as sysupgrade will only act on AUR packages.
---answerclean <All|None|Installed|NotInstalled|...> Set a predetermined answer for the clean build menu question. This answer will be used instead of reading from standard input but will be parsed exactly the same.
---answerdiff <All|None|Installed|NotInstalled|...> Set a predetermined answer for the edit diff menu question. This answer will be used instead of reading from standard input but will be parsed exactly the same.
---answeredit <All|None|Installed|NotInstalled|...> Set a predetermined answer for the edit pkgbuild menu question. This answer will be used instead of reading from standard input but will be parsed exactly the same.
---answerupgrade <Repo|^Repo|None|...> Set a predetermined answer for the upgrade menu question. Selects which package ranges or repos to omit for updates. This answer will be used instead of reading from standard input but will be treated exactly the same.
---askremovemake Ask to remove makedepends after installing packages.
---askyesremovemake Ask to remove makedepends after installing packages(with "Y" as default).
---aur [1m[[0;36m-a[0;1m][m Assume all targets are from the AUR. Additionally Actions such as sysupgrade will only act on AUR packages.
---aurrpcurl Set an alternative URL for the AUR /rpc endpoint.
---aururl Set an alternative AUR URL.
---batchinstall When building and installing AUR packages instead of installing each package after building, queue each package for install. Then once either all packages are built or a package in the build queue is needed as a dependency to build another package, install all the packages in the install queue.
--B Build a PKGBUILD in a given directory.
---bottomup Show AUR packages first and then repository packages.
---build [1m[[0;36m-B[0;1m][m Build a PKGBUILD in a given directory.
---builddir <dir> Directory to use for Building AUR Packages. This directory is also used as the AUR cache when deciding if Yay should skip builds.
--cc Remove unneeded dependencies, including packages optionally required by any other package.
---clean [1m[[0;36m-c[0;1m][m Remove unneeded dependencies.
---cleanafter Remove untracked files after installation.
---cleanmenu Show the clean menu. This menu gives you the chance to fully delete the downloaded build files from Yay's cache before redownloading a fresh copy.
---combinedupgrade During sysupgrade, Yay will first perform a refresh, then show its combined menu of repo and AUR packages that will be upgraded. Then after reviewing the pkgbuilds, the repo and AUR upgrade will start with no need for manual intervention.
---complete Print a list of all AUR and repo packages. This allows shell completion and is not intended to be used directly by the user.
---completioninterval <days> Time in days to refresh the completion cache. Setting this to 0 will cause the cache to be refreshed every time, while setting this to -1 will cause the cache to never be refreshed.
---config <file> The pacman config file to use.
--c Remove unneeded dependencies.
---currentconfig [1m[[0;36m-g[0;1m][m Print current yay configuration.
---defaultconfig [1m[[0;36m-d[0;1m][m Print default yay configuration.
---devel During sysupgrade also check AUR development packages for updates. Currently only Git packages are supported.
---diffmenu Show the diff menu. This menu gives you the option to view diffs from build files before building.
---doublelineresults Follow pacman's double-line search result format and list each result using two lines.
--d Print default yay configuration.
---editmenu Show the edit menu. This menu gives you the option to edit or view PKGBUILDs before building.
---editor <command> Editor to use when editing PKGBUILDs. If this is not set the [1mVISUAL [22menvironment variable will be checked, followed by [1mEDITOR[22m. If none of these are set Yay will prompt the user for an editor.
---editorflags <flags> Passes arguments to the editor. These flags get passed to every instance where the editor is called by Yay. Arguments are split on whitespace before being passed to the editor. Multiple arguments may be passed by supplying a space separated list that is quoted by the shell.
--f Force download for ABS packages that already exist in the current directory. This ensures directories are not accidentally overwritten.
---force [1m[[0;36m-f[0;1m][m Force download for ABS packages that already exist in the current directory. This ensures directories are not accidentally overwritten.
--G Downloads PKGBUILD from ABS or AUR. The ABS can only be used for Arch Linux repositories.
---gendb Generate development package database. Tracks the latest commit for each development package, when there is a new commit Yay will know to update. This is done per package whenever a package is synced. This option should only be used when migrating to Yay from another AUR helper.
---getpkgbuild [1m[[0;36m-G[0;1m][m Downloads PKGBUILD from ABS or AUR. The ABS can only be used for Arch Linux repositories.
---git <command> The command to use for [1mgit [22mcalls. This can be a command in [1mPATH [22mor an absolute path to the file.
---gpg <command> The command to use for [1mgpg [22mcalls. This can be a command in [1mPATH [22mor an absolute path to the file.
---gpgflags <flags> Passes arguments to gpg. These flags get passed to every instance where gpg is called by Yay. Arguments are split on whitespace before being passed to gpg. Multiple arguments may be passed by supplying a space separated list that is quoted by the shell.
--g Print current yay configuration.
--i Build and install a PKGBUILD in a given directory
---install [1m[[0;36m-i[0;1m][m Build and install a PKGBUILD in a given directory
---keepsrc Keep pkg/ and src/ after building packages
---makepkg <command> The command to use for [1mmakepkg [22mcalls. This can be a command in [1mPATH [22mor an absolute path to the file.
---makepkgconf <file> The config file for makepkg to use. If this is not set then the default config file will be used.
---mflags <flags> Passes arguments to makepkg. These flags get passed to every instance where makepkg is called by Yay. Arguments are split on whitespace before being passed to makepkg. Multiple arguments may be passed by supplying a space separated list that is quoted by the shell.
--N Assume all targets are from the repositories. Additionally Actions such as sysupgrade will only act on repository packages.
---news [1m[[0;36m-w[0;1m][m Print new news from the Archlinux homepage. News is considered new if it is newer than the build date of all native packages. Pass this twice to show all available news.
---noanswerclean Unset the answer for the clean build menu.
---noanswerdiff Unset the answer for the diff menu.
---noansweredit Unset the answer for the edit pkgbuild menu.
---noanswerupgrade Unset the answer for the upgrade menu.
---nomakepkgconf Reset the makepkg config file back to its default.
---norebuild When building packages if the package is found in cache and is an equal version to the one wanted skip the package build and use the existing package.
---noredownload When downloading pkgbuilds if the pkgbuild is found in cache and is equal or newer than the AUR's version use that instead of downloading a new one.
---noremovemake Do not remove makedepends after installing packages.
---pacman <command> The command to use for [1mpacman [22mcalls. This can be a command in [1mPATH [22mor an absolute path to the file.
---pgpfetch Prompt to import unknown PGP keys from the [1mvalidpgpkeys [22mfield of each PKGBUILD.
--P Perform yay specific print operations.
--p Prints the PKGBUILD of the given packages to stdout.
---print [1m[[0;36m-p[0;1m][m Prints the PKGBUILD of the given packages to stdout.
---provides Look for matching providers when searching for AUR packages. When multiple providers are found a menu will appear prompting you to pick one. This increases dependency resolve time although this should not be noticeable.
--q Only show titles when printing news.
---quiet [1m[[0;36m-q[0;1m][m Only show titles when printing news.
--Qu These operations are extended to support both AUR and repo packages.
---rebuildall Always build all AUR packages even when a copy is available in cache.
---rebuild Always build target packages even when a copy is available in cache.
---rebuildtree When installing an AUR package rebuild and reinstall all of its AUR dependencies recursively, even the ones already installed. This flag allows you to easily rebuild packages against your current system's libraries if they have become incompatible.
---redownloadall Always download pkgbuilds of all AUR packages even when a copy is available in cache.
---redownload Always download pkgbuilds of targets even when a copy is available in cache.
---removemake Remove makedepends after installing packages.
---repo [1m[[0;36m-N[0;1m][m Assume all targets are from the repositories. Additionally Actions such as sysupgrade will only act on repository packages.
---requestsplitn <number> The maximum amount of packages to request per AUR query. The higher the number the faster AUR requests will be. Requesting too many packages in one AUR query will cause an error. This should only make a noticeable difference with very large requests (>500) packages.
--R Yay will also remove cached data about devel packages.
---save Causes the following options to be saved back to the config file. This provides an easy way to change config options without directly editing the file.
--Sc These operations are extended to support both AUR and repo packages.
--s Displays information about installed packages and system health. If there are orphaned, or out-of-date packages, or packages that no longer exist on the AUR.
---searchby <name|name-desc|maintainer|depends|checkdepends|makedepends|optdepends|provides|conflicts|replaces|groups|keywords|comaintainers> Search for AUR packages by querying the specified field.
---separatesources Separate query results by source, AUR and sync
---show [1m[[0;36m-P[0;1m][m Perform yay specific print operations.
---singlelineresults Override pacman's usual double-line search result format and list each result on its own line.
--Si These operations are extended to support both AUR and repo packages.
--Sl These operations are extended to support both AUR and repo packages.
---sortby <votes|popularity|id|baseid|name|base|submitted|modified> Sort AUR results by a specific field during search.
--Ss These operations are extended to support both AUR and repo packages.
---stats [1m[[0;36m-s[0;1m][m Displays information about installed packages and system health. If there are orphaned, or out-of-date packages, or packages that no longer exist on the AUR.
--S These operations are extended to support both AUR and repo packages.
---sudo <command> The command to use for [1msudo [22mcalls. This can be a command in [1mPATH [22mor an absolute path to the file. The sudoloop is not guaranteed to work with a custom [1msudo [22mcommand.
---sudoflags <flags> Passes arguments to sudo. These flags get passed to every instance where sudo is called by Yay. Arguments are split on whitespace before being passed to sudo. Multiple arguments may be passed by supplying a space separated list that is quoted by the shell.
---sudoloop Loop sudo calls in the background to prevent sudo from timing out during long builds.
--Su These operations are extended to support both AUR and repo packages.
---tar <command> The command to use for [1mbsdtar [22mcalls. This can be a command in [1mPATH [22mor an absolute path to the file.
---timeupdate During sysupgrade also compare the build time of installed packages against the last modification time of each package's AUR page.
---topdown Display repository packages first and then AUR packages.
---unvote [1m[[0;36m-u[0;1m][m Remove vote from AUR package(s)
--u Remove vote from AUR package(s)
---useask Use pacman's --ask flag to automatically confirm package conflicts. Yay lists conflicts ahead of time. It is possible that Yay does not detect a conflict, causing a package to be removed without the user's confirmation. However, this is very unlikely.
---vote [1m[[0;36m-v[0;1m][m Vote for AUR package(s)
--v Vote for AUR package(s)
---web [1m[[0;36m-W[0;1m][m Web related operations such as voting for AUR packages.
--w Print new news from the Archlinux homepage. News is considered new if it is newer than the build date of all native packages. Pass this twice to show all available news.
--W Web related operations such as voting for AUR packages.
---yay [1m[[0;36m-Y[0;1m][m Perform yay specific operations. This is the default if no other operation is selected and targets are defined.
--Y Perform yay specific operations. This is the default if no other operation is selected and targets are defined.

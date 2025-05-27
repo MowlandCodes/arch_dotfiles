@@ -1,2 +1,0 @@
--d DIR --target=DIR Set the target directory to DIR instead of the parent of the stow directory.
--t DIR --target=DIR Set the target directory to DIR instead of the parent of the stow directory.

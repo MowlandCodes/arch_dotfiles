@@ -1,32 +1,0 @@
--b Beep if [4mcommand[24m has a non-zero exit.
---beep [1m[[0;36m-b[0;1m][m Beep if [4mcommand[24m has a non-zero exit.
--C Do not interpret ANSI color and style sequences.
---chgexit [1m[[0;36m-g[0;1m][m Exit when the visible output of [4mcommand[24m changes. Changes that are off the screen due to small screen size or large output will not cause [1mwatch [22mto exit.
--c Interpret ANSI color and style sequences.
---color [1m[[0;36m-c[0;1m][m Interpret ANSI color and style sequences.
--d Highlight the differences between successive updates. If the optional [4mpermanent[24m argument is specified then [1mwatch [22mwill show all changes since the first iteration.
---differences[=permanent]=[1m[[0;36m-d[0;1m][m Highlight the differences between successive updates. If the optional [4mpermanent[24m argument is specified then [1mwatch [22mwill show all changes since the first iteration.
--e Freeze updates on [4mcommand[24m error, and exit after a key press. The exit code of [1mwatch [22mwill be the code [4mcommand[24m exits with. If signal [1mn [22mis the cause of [4mcommand[24m termination, the exit code will be 128 + [1mn[22m.
---equexit <cycles> [1m[[0;36m-q[0;1m][m Exit when output of [4mcommand[24m does not change for the given number of cycles.
---errexit [1m[[0;36m-e[0;1m][m Freeze updates on [4mcommand[24m error, and exit after a key press. The exit code of [1mwatch [22mwill be the code [4mcommand[24m exits with. If signal [1mn [22mis the cause of [4mcommand[24m termination, the exit code will be 128 + [1mn[22m.
---exec [1m[[0;36m-x[0;1m][m Pass [4mcommand[24m to an [1mexec[22m(3) call instead of [1msh -c[22m. The program will start a bit quicker. Shell features (environment setup, variable and pathname expansion, etc.) will be unavailable.
--g Exit when the visible output of [4mcommand[24m changes. Changes that are off the screen due to small screen size or large output will not cause [1mwatch [22mto exit.
--h Display help text and exit.
---help [1m[[0;36m-h[0;1m][m Display help text and exit.
---interval seconds [1m[[0;36m-n[0;1m][m Specify update interval. Values smaller than 0.1 and larger than 2678400 (31 days) are converted into these respective bounds. Both '.' and ',' work for any locale. The [1mWATCH_INTERVAL [22menvironment variable can be used to persistently set a non-default interval (following the same rules and formatting).
---no-color [1m[[0;36m-C[0;1m][m Do not interpret ANSI color and style sequences.
---no-rerun [1m[[0;36m-r[0;1m][m Do not run the program on terminal resize, the output of the program will re-appear at the next regular run time.
---no-title [1m[[0;36m-t[0;1m][m Turn off the header normally shown at the top of the screen.
---no-wrap [1m[[0;36m-w[0;1m][m Turn off line wrapping. Long lines will be truncated instead of wrapped to the next line.
--n Specify update interval. Values smaller than 0.1 and larger than 2678400 (31 days) are converted into these respective bounds. Both '.' and ',' work for any locale. The [1mWATCH_INTERVAL [22menvironment variable can be used to persistently set a non-default interval (following the same rules and formatting).
--p Execute [4mcommand[24m [1m--interval [22mseconds after its previous run started, instead of [1m--interval [22mseconds after its previous run finished. If it's taking longer than [1m--interval [22mseconds for [4mcommand[24m to complete, it is waited for in either case.
---precise [1m[[0;36m-p[0;1m][m Execute [4mcommand[24m [1m--interval [22mseconds after its previous run started, instead of [1m--interval [22mseconds after its previous run finished. If it's taking longer than [1m--interval [22mseconds for [4mcommand[24m to complete, it is waited for in either case.
--q <cycles> Exit when output of [4mcommand[24m does not change for the given number of cycles.
--r Do not run the program on terminal resize, the output of the program will re-appear at the next regular run time.
--s Directory to save screenshots into.
---shotsdir [1m[[0;36m-s[0;1m][m Directory to save screenshots into.
--t Turn off the header normally shown at the top of the screen.
--v Display version information and exit.
---version [1m[[0;36m-v[0;1m][m Display version information and exit.
--w Turn off line wrapping. Long lines will be truncated instead of wrapped to the next line.
--x Pass [4mcommand[24m to an [1mexec[22m(3) call instead of [1msh -c[22m. The program will start a bit quicker. Shell features (environment setup, variable and pathname expansion, etc.) will be unavailable.

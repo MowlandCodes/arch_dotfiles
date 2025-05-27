@@ -1,26 +1,0 @@
---backup[=CONTROL]=make a backup of each existing destination file
--b like [1m--backup [22mbut does not accept an argument
---context [1m[[0;36m-Z[0;1m][m set SELinux security context of destination file to default type
---debug explain how a file is copied. Implies [1m-v[0m
---exchange exchange source and destination
--f do not prompt before overwriting
---force [1m[[0;36m-f[0;1m][m do not prompt before overwriting
---help display this help and exit
---interactive [1m[[0;36m-i[0;1m][m prompt before overwrite
--i prompt before overwrite
--n do not overwrite an existing file
---no-clobber [1m[[0;36m-n[0;1m][m do not overwrite an existing file
---no-copy do not copy if renaming fails
---no-target-directory [1m[[0;36m-T[0;1m][m treat DEST as a normal file
--S SUFFIX override the usual backup suffix
---strip-trailing-slashes remove any trailing slashes from each SOURCE argument
---suffix=SUFFIX=[1m[[0;36m-S[0;1m][m override the usual backup suffix
---target-directory=DIRECTORY=[1m[[0;36m-t[0;1m][m move all SOURCE arguments into DIRECTORY
--t DIRECTORY move all SOURCE arguments into DIRECTORY
--T treat DEST as a normal file
--u equivalent to [1m--update[22m[=[4molder[24m]. See below
---update[=UPDATE]=control which existing files are updated.
---verbose [1m[[0;36m-v[0;1m][m explain what is being done
---version output version information and exit
--v explain what is being done
--Z set SELinux security context of destination file to default type

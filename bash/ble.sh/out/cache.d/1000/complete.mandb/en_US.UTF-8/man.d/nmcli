@@ -1,15 +1,0 @@
--a | --ask When using this option [1mnmcli [22mwill stop and ask for any missing required arguments, so do not use this option for non-interactive purposes like scripts. This option controls, for example, whether you will be prompted for a password if it is required for connecting to a network.
--c | --colors {yes | no | auto} This option controls color output (using terminal escape sequences). yes enables colors, no disables them, auto only produces colors when standard output is directed to a terminal. The default value is auto.
---complete-args Instead of conducting the desired action, [1mnmcli [22mwill list possible completions for the last argument. This is useful to implement argument completion in shell.
--e | --escape {yes | no} Whether to escape : and \ characters in terse tabular mode. The escape character is \.
--f | --fields {field1,field2... | all | common} This option is used to specify what fields (column names) should be printed. Valid field names differ for specific commands. List available fields by providing an invalid value to the [1m--fields [22moption. all is used to print all valid field values of the command. common is used to print common field values of the command.
--g | --get-values {field1,field2... | all | common} This option is used to print values from specific fields. It is basically a shortcut for --mode tabular --terse --fields and is a convenient way to retrieve values for particular fields. The values are printed one per line without headers.
--h | --help Print help information.
--- If a single [1m-- [22margument is encountered it is ignored. This is for compatibility with older versions on [1mnmcli[22m.
--m | --mode {tabular | multiline} Switch between tabular and multiline output:
---offline Work without a daemon. Makes [1mconnection add [22mand [1mconnection modify [22mcommands accept and produce connection data via standard input/output. Ordinarily, nmcli would communicate with the NetworkManager service.
--p | --pretty Output is pretty. This causes [1mnmcli [22mto produce easily readable outputs for humans, i.e. values are aligned, headers are printed, etc.
--s | --show-secrets When using this option [1mnmcli [22mwill display passwords and secrets that might be present in an output of an operation. This option also influences echoing passwords typed by user as an input.
--t | --terse Output is terse. This mode is designed and suitable for computer (script) processing.
--v | --version Show [1mnmcli [22mversion.
--w | --wait seconds This option sets a timeout period for which [1mnmcli [22mwill wait for NetworkManager to finish operations. It is especially useful for commands that may take a longer time to complete, e.g. connection activation.
