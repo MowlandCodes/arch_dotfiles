@@ -10,19 +10,23 @@ function sb_volume() {
     volume=$(amixer get Master | egrep -o '[0-9]{1,3}%' 2>/dev/null | sed 's/%//g')
 
     if [[ $volume -gt 80 ]]; then
-        icon="^c#40ff89^ ^d^"
+        icon="^b#40ff89^^c#212233^   ^d^"
+        volumetext="^c#40ff89^$volume"
         dunstify -a "volume" "Volume: $volume%" --icon="volume-high-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
     elif [[ $volume -gt 40 ]] && [[ $volume -lt 80 ]]; then
-        icon="^c#eac96c^ ^d^"
+        icon="^b#eac96c^^c#212233^   ^d^"
+        volumetext="^c#eac96c^$volume"
         dunstify -a "volume" "Volume: $volume%" --icon="volume-low-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
     elif [[ $volume -gt 0 ]] && [[ $volume -lt 40 ]]; then
-        icon="^c#eac96c^ ^d^"
+        icon="^b#eac96c^^c#212233^   ^d^"
+        volumetext="^c#eac96c^$volume"
         dunstify -a "volume" "Volume: $volume%" --icon="volume-off-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
     else
-        icon="^c#ba000a^ ^d^"
+        icon="^b#ba000a^^c#212233^   ^d^"
+        volumetext="^c#ba000a^$volume"
         dunstify -a "volume" "Volume: $volume%" --icon="volume-xmark-solid" -u normal -r 9991 -t 1000 -h int:value:$volume
     fi 
 }
 
 sb_volume
-echo "$icon $volume%"
+echo "$icon $volumetext%^d^"

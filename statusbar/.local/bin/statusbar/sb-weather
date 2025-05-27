@@ -9,7 +9,7 @@ esac
 TEMPERATURE=$(curl -s "https://api.open-meteo.com/v1/forecast?latitude=-7.8842&longitude=111.4955&current=temperature_2m&timezone=Asia/Jakarta" | jq .current.temperature_2m)
 
 if [[ -z $TEMPERATURE ]]; then
-    echo "^c#FF1500^  Error^d^"
+    echo "^b#FF1500^^c#212233^   ^d^^c#FF1500^ Error ^d^"
 else
-    echo "^c#20BAFF^ ^d^ $TEMPERATURE 󰔄"
+    echo "^b#20BAFF^^c#212233^   ^d^^c#20BAFF^ $TEMPERATURE 󰔄 ^d^"
 fi

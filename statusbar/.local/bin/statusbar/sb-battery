@@ -8,7 +8,7 @@ BATTERY_CAPACITY="$(cat $BATTERY_PATH/capacity)"
 
 if [[ "$BATTERY_STATUS" == "Charging" ]]; then
     if [[ $BATTERY_CAPACITY -gt 90 ]] && [[ $BATTERY_CAPACITY -lt 100 ]]; then
-        echo "^c#99FF00^󰂋 ^d^$BATTERY_CAPACITY%"
+        echo "^b#99FF00^^c#212233^ 󰂋 ^d^$BATTERY_CAPACITY%"
     elif [[ $BATTERY_CAPACITY -gt 80 ]] && [[ $BATTERY_CAPACITY -lt 90 ]]; then
         echo "^c#99FF00^󰂊 ^d^$BATTERY_CAPACITY%"
     elif [[ $BATTERY_CAPACITY -gt 70 ]] && [[ $BATTERY_CAPACITY -lt 80 ]]; then
@@ -30,7 +30,7 @@ if [[ "$BATTERY_STATUS" == "Charging" ]]; then
     fi
 elif [[ "$BATTERY_STATUS" == "Discharging" ]]; then
     if [[ $BATTERY_CAPACITY -gt 90 ]] && [[ $BATTERY_CAPACITY -lt 100 ]]; then
-        echo "^c#99FF00^󰂂 ^d^$BATTERY_CAPACITY%"
+        echo "^b#99FF00^^c#212233^ 󰂂 ^d^$BATTERY_CAPACITY%"
     elif [[ $BATTERY_CAPACITY -gt 80 ]] && [[ $BATTERY_CAPACITY -lt 90 ]]; then
         echo "^c#99FF00^󰂁 ^d^$BATTERY_CAPACITY%"
     elif [[ $BATTERY_CAPACITY -gt 70 ]] && [[ $BATTERY_CAPACITY -lt 80 ]]; then
@@ -51,5 +51,5 @@ elif [[ "$BATTERY_STATUS" == "Discharging" ]]; then
         echo "^c#FF3000^󰂎 ^d^$BATTERY_CAPACITY%"
     fi
 elif [[ "$BATTERY_STATUS" == "Full" ]] && [[ "$BATTERY_CAPACITY" == 100 ]]; then
-    echo "^c#99FF00^󰁹 ^d^$BATTERY_CAPACITY%"
+    echo "^b#99FF00^^c#212233^ 󰁹 ^d^ $BATTERY_CAPACITY%"
 fi

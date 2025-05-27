@@ -9,18 +9,18 @@ CONN_TYPE=$(nmcli -t -f device,type,state,connection d status | grep ":connected
 
 # Check for device connection
 if [[ "$CONN_TYPE" == "ethernet" ]]; then
-    echo "^c#22FFBB^ 󰈀 ^d^"
+    echo "^b#22FFBB^^c#212233^  󰈀  ^d^^c#22FFBB^ Connected^d^"
 elif [[ "$CONN_TYPE" == "wifi" ]]; then
     WIFI_STRENGTH=$(nmcli -t -f in-use,signal d wifi list | grep '*:' | awk -F':' '{print $3}')
     if [[ $WIFI_STRENGTH -ge 0 ]] && [[ $WIFI_STRENGTH -lt 25 ]]; then
-        echo "^c#e26c1b^ 󰤟 ^d^"
+        echo "^b#e26c1b^^c#212233^  󰤟  ^d^^c#e26c1b^ Connected^d^"
     elif [[ $WIFI_STRENGTH -ge 25 ]] && [[ $WIFI_STRENGTH -lt 50 ]]; then
-        echo "^c#ffb046^ 󰤢 ^d^"
+        echo "^b#ffb046^^c#212233^  󰤢  ^d^^c#ffb046^ Connected^d^"
     elif [[ $WIFI_STRENGTH -ge 50 ]] && [[ $WIFI_STRENGTH -lt 75 ]]; then
-        echo "^c#f7d900^ 󰤥 ^d^"
+        echo "^b#f7d900^^c#212233^  󰤥  ^d^^c#f7d900^ Connected^d^"
     elif [[ $WIFI_STRENGTH -ge 75 ]]; then
-        echo "^c#22FFBB^ 󰤨 ^d^"
+        echo "^b#22FFBB^^c#212233^  󰤨  ^d^^c#22FFBB^ Connected^d^"
     fi
 else
-    echo "^c#FF0000^  ^d^"
+    echo "^b#FF0000^^c#212233^   ^d^^c#FF0000^ Offline^d^"
 fi

@@ -4,4 +4,4 @@ case $BLOCK_BUTTON in
     1) setsid -f "st" -e btop ;;
 esac
 
-echo $(free -h | awk '/^Mem/ {print $3"/"$2}' | sed 's/i//g')
+echo "^c#C6A0F6^$(free -h | awk '/^Mem/ {print $3"/"$2}' | sed 's/i//g')^d^"

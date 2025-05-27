@@ -1,2 +1,3 @@
 *.o
 bash/ble.sh/out/cache.d
+suckless/suckless/**/build/
