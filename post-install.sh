@@ -98,3 +98,8 @@ yay -Sy --needed catppuccin-gtk-theme-macchiato
 # Configuring LightDM for GTK Greeter
 cp ./lightdm/lightdm.conf /etc/lightdm/
 cp ./lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+
+# Rebooting System
+echo -e "$SUCCESS[*]$NORMAL Installation complete! Rebooting system..."
+sleep 3
+systemctl reboot
