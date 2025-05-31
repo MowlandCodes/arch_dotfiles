@@ -4,5 +4,5 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-startx
 xgifwallpaper -s FILL ~/wallpaper.gif &
+startx
