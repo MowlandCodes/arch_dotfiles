@@ -177,7 +177,7 @@
 /* The systray patch adds systray for the status bar.
  * https://dwm.suckless.org/patches/systray/
  */
-#define BAR_SYSTRAY_PATCH 0
+#define BAR_SYSTRAY_PATCH 1
 
 /* Show tag symbols in the bar. */
 #define BAR_TAGS_PATCH 1
@@ -456,8 +456,8 @@
  * that if using flexipatch-finalizer this must be explicitly enabled.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-barmodules-wintitleactions-6.2.diff
  */
-#define BAR_WINTITLEACTIONS_PATCH                                              \
-  BAR_AWESOMEBAR_PATCH || BAR_TABGROUPS_PATCH || BAR_FLEXWINTITLE_PATCH
+#define BAR_WINTITLEACTIONS_PATCH \
+    BAR_AWESOMEBAR_PATCH || BAR_TABGROUPS_PATCH || BAR_FLEXWINTITLE_PATCH
 
 /***
  * Other patches
