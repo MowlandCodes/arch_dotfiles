@@ -14,7 +14,7 @@ if [[ $(id -u) -ne 0 ]]; then
 fi
 
 # List of packages to install
-PACKAGES=(base-devel xorg xorg-server xorg-xinit libx11 libxinerama libxft lightdm lightdm-gtk-greeter webkit2gtk bluez bluez-utils blueman pulseaudio pulseaudio-alsa pulseaudio-bluetooth zen-browser-bin picom neovim fastfetch net-tools wireless_tools curl wget zathura ranger rofi dunst xgifwallpaper stow nodejs npm lua python prettierd ueberzugpp cmake make zoxide ttf-jetbrains-mono-nerd eza go gtk3 xcur2png)
+PACKAGES=(base-devel xorg xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk bluez bluez-utils blueman pulseaudio pulseaudio-alsa pulseaudio-bluetooth zen-browser-bin picom neovim fastfetch net-tools wireless_tools curl wget zathura ranger rofi dunst xgifwallpaper stow nodejs npm lua python prettierd ueberzugpp cmake make zoxide ttf-jetbrains-mono-nerd eza go gtk3 xcur2png jq)
 
 # List of dotfiles to stow
 DOTFILES=(bash dunst gtk nvim picom ranger rofi starship statusbar suckless wallpaper zathura)
