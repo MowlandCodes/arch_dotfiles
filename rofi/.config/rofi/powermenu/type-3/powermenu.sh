@@ -11,20 +11,23 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-3"
-theme='style-1'
+theme='style-5'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
+host=`cat /etc/hostname`
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+
+shutdown=''
+reboot=''
+lock=''
+suspend='󰤁'
+logout='󰍃'
+yes=''
+no=''
+
+
 
 # Rofi CMD
 rofi_cmd() {
@@ -73,6 +76,8 @@ run_cmd() {
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+            elif [[ -z "$DESKTOP_SESSION" ]]; then
+                killall dwm; # Kill DWM Process
 			fi
 		fi
 	else
@@ -91,7 +96,7 @@ case ${chosen} in
         ;;
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
+			betterlockscreen -l blur
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
 		fi

@@ -24,9 +24,9 @@ configuration {
     element-padding:             45px 40px;
     element-border-radius:       100%;
 
-    prompt-font:                 "Iosevka Nerd Font Bold 32";
-    textbox-font:                "Iosevka Nerd Font 12";
-    element-text-font:           "feather Bold 48";
+    prompt-font:                 "JetBrainsMono Nerd Font Bold 32";
+    textbox-font:                "JetBrainsMono Nerd Font 12";
+    element-text-font:           "JetBrainsMono Nerd Font Bold 48";
 
     /* Gradients */
     gradient-1:                  linear-gradient(45, #1E98FD, #06FDA5);
@@ -78,7 +78,7 @@ mainbox {
 
 /*****----- User -----*****/
 userimage {
-    margin:                      0px 400px;
+    margin:                      0px 0px;
     border:                      2px;
     border-radius:               100%;
     border-color:                white;
