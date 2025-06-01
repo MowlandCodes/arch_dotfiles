@@ -7,49 +7,49 @@ BATTERY_CAPACITY="$(cat $BATTERY_PATH/capacity)"
 
 
 if [[ "$BATTERY_STATUS" == "Charging" ]]; then
-    if [[ $BATTERY_CAPACITY -gt 90 ]] && [[ $BATTERY_CAPACITY -lt 100 ]]; then
-        echo "^b#99FF00^^c#212233^ 󰂋 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 80 ]] && [[ $BATTERY_CAPACITY -lt 90 ]]; then
-        echo "^c#99FF00^󰂊 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 70 ]] && [[ $BATTERY_CAPACITY -lt 80 ]]; then
-        echo "^c#FFD93A^󰢞 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 60 ]] && [[ $BATTERY_CAPACITY -lt 70 ]]; then
-        echo "^c#FFD93A^󰂉 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 50 ]] && [[ $BATTERY_CAPACITY -lt 60 ]]; then
-        echo "^c#FFD93A^󰢝 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 40 ]] && [[ $BATTERY_CAPACITY -lt 50 ]]; then
-        echo "^c#FFA91A^󰂈 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 30 ]] && [[ $BATTERY_CAPACITY -lt 40 ]]; then
-        echo "^c#FFA91A^󰂇 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 20 ]] && [[ $BATTERY_CAPACITY -lt 30 ]]; then
-        echo "^c#FFA91A^󰂆 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 10 ]] && [[ $BATTERY_CAPACITY -lt 20 ]]; then
-        echo "^c#FF3000^󰢜 ^d^$BATTERY_CAPACITY%"
+    if [[ $BATTERY_CAPACITY -ge 90 ]] && [[ $BATTERY_CAPACITY -lt 100 ]]; then
+        echo "^b#99FF00^^c#212233^ 󰂋 ^d^ ^c#99FF00^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 80 ]] && [[ $BATTERY_CAPACITY -lt 90 ]]; then
+        echo "^b#99FF00^^c#212233^ 󰂊 ^d^ ^c#99FF00^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 70 ]] && [[ $BATTERY_CAPACITY -lt 80 ]]; then
+        echo "^b#FFD93A^^c#212233^ 󰢞 ^d^ ^c#FFD93A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 60 ]] && [[ $BATTERY_CAPACITY -lt 70 ]]; then
+        echo "^b#FFD93A^^c#212233^ 󰂉 ^d^ ^c#FFD93A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 50 ]] && [[ $BATTERY_CAPACITY -lt 60 ]]; then
+        echo "^b#FFD93A^^c#212233^ 󰢝 ^d^ ^c#FFD93A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 40 ]] && [[ $BATTERY_CAPACITY -lt 50 ]]; then
+        echo "^b#FFA91A^^c#212233^ 󰂈 ^d^ ^c#FFA91A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 30 ]] && [[ $BATTERY_CAPACITY -lt 40 ]]; then
+        echo "^b#FFA91A^^c#212233^ 󰂇 ^d^ ^c#FFA91A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 20 ]] && [[ $BATTERY_CAPACITY -lt 30 ]]; then
+        echo "^b#FFA91A^^c#212233^ 󰂆 ^d^ ^c#FFA91A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 10 ]] && [[ $BATTERY_CAPACITY -lt 20 ]]; then
+        echo "^b#FF3000^^c#212233^ 󰢜 ^d^ ^c#FF3000^$BATTERY_CAPACITY%"
     elif [[ $BATTERY_CAPACITY -gt 0 ]] && [[ $BATTERY_CAPACITY -lt 10 ]]; then
-        echo "^c#FF3000^󰢟 ^d^$BATTERY_CAPACITY%"
+        echo "^b#FF3000^^c#212233^ 󰢟 ^d^ ^c#FF3000^$BATTERY_CAPACITY%"
     fi
 elif [[ "$BATTERY_STATUS" == "Discharging" ]]; then
-    if [[ $BATTERY_CAPACITY -gt 90 ]] && [[ $BATTERY_CAPACITY -lt 100 ]]; then
-        echo "^b#99FF00^^c#212233^ 󰂂 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 80 ]] && [[ $BATTERY_CAPACITY -lt 90 ]]; then
-        echo "^c#99FF00^󰂁 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 70 ]] && [[ $BATTERY_CAPACITY -lt 80 ]]; then
-        echo "^c#FFD93A^󰂀 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 60 ]] && [[ $BATTERY_CAPACITY -lt 70 ]]; then
-        echo "^c#FFD93A^󰁿 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 50 ]] && [[ $BATTERY_CAPACITY -lt 60 ]]; then
-        echo "^c#FFD93A^󰁾 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 40 ]] && [[ $BATTERY_CAPACITY -lt 50 ]]; then
-        echo "^c#FFA91A^󰁽 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 30 ]] && [[ $BATTERY_CAPACITY -lt 40 ]]; then
-        echo "^c#FFA91A^󰁼 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 20 ]] && [[ $BATTERY_CAPACITY -lt 30 ]]; then
-        echo "^c#FFA91A^󰁻 ^d^$BATTERY_CAPACITY%"
-    elif [[ $BATTERY_CAPACITY -gt 10 ]] && [[ $BATTERY_CAPACITY -lt 20 ]]; then
-        echo "^c#FF3000^󰁺 ^d^$BATTERY_CAPACITY%"
+    if [[ $BATTERY_CAPACITY -ge 90 ]] && [[ $BATTERY_CAPACITY -lt 100 ]]; then
+        echo "^b#99FF00^^c#212233^ 󰂂 ^d^ ^c#99FF00^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 80 ]] && [[ $BATTERY_CAPACITY -lt 90 ]]; then
+        echo "^b#99FF00^^c#212233^ 󰂁 ^d^ ^c#99FF00^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 70 ]] && [[ $BATTERY_CAPACITY -lt 80 ]]; then
+        echo "^b#FFD93A^^c#212233^ 󰂀 ^d^ ^c#FFD93A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 60 ]] && [[ $BATTERY_CAPACITY -lt 70 ]]; then
+        echo "^b#FFD93A^^c#212233^ 󰁿 ^d^ ^c#FFD93A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 50 ]] && [[ $BATTERY_CAPACITY -lt 60 ]]; then
+        echo "^b#FFD93A^^c#212233^ 󰁾 ^d^ ^c#FFD93A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 40 ]] && [[ $BATTERY_CAPACITY -lt 50 ]]; then
+        echo "^b#FFA91A^^c#212233^ 󰁽 ^d^ ^c#FFA91A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 30 ]] && [[ $BATTERY_CAPACITY -lt 40 ]]; then
+        echo "^b#FFA91A^^c#212233^ 󰁼 ^d^ ^c#FFA91A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 20 ]] && [[ $BATTERY_CAPACITY -lt 30 ]]; then
+        echo "^b#FFA91A^^c#212233^ 󰁻 ^d^ ^c#FFA91A^$BATTERY_CAPACITY%"
+    elif [[ $BATTERY_CAPACITY -ge 10 ]] && [[ $BATTERY_CAPACITY -lt 20 ]]; then
+        echo "^b#FF3000^^c#212233^ 󰁺 ^d^ ^c#FF3000^$BATTERY_CAPACITY%"
     elif [[ $BATTERY_CAPACITY -gt 0 ]] && [[ $BATTERY_CAPACITY -lt 10 ]]; then
-        echo "^c#FF3000^󰂎 ^d^$BATTERY_CAPACITY%"
+        echo "^b#FF3000^^c#212233^ 󰂎 ^d^ ^c#FF3000^$BATTERY_CAPACITY%"
     fi
 elif [[ "$BATTERY_STATUS" == "Full" ]] && [[ "$BATTERY_CAPACITY" == 100 ]]; then
-    echo "^b#99FF00^^c#212233^ 󰁹 ^d^ $BATTERY_CAPACITY%"
+    echo "^b#99FF00^^c#212233^ 󰁹 ^d^ ^c#99FF00^$BATTERY_CAPACITY%^d^"
 fi

@@ -39,12 +39,13 @@ alias conf_st='cd ${HOME}/suckless/st; nvim; make_st; cd -'
 alias conf_dwm='cd ${HOME}/suckless/dwm; nvim; make_dwm; cd -'
 alias conf_dwmblocks='cd ${HOME}/suckless/dwmblocks; nvim; make_dwmblocks; reset_dwmblocks; cd -'
 alias conf_autostart='nvim ${HOME}/.dwm/autostart.sh'
-alias conf_sb_script='cd ~/.local/bin/; nvim; cd -'
+alias conf_sb_script='cd ~/.local/bin/statusbar; nvim; cd -'
 alias make_dwm='cd ${HOME}/suckless/dwm; sudo cp config.def.h config.h; sudo cp patches.def.h patches.h; sudo make clean install; cd -'
 alias make_st='cd ${HOME}/suckless/st; sudo cp config.def.h config.h; sudo make clean install; cd -'
 alias make_dwmblocks='cd ${HOME}/suckless/dwmblocks; sudo make clean install; cd -'
 alias reset_dwmblocks='reset_dwmblocks'
 alias cd="z"
+alias lz="lazygit"
 
 # Terminal Prompt
 PS1='[\u@\h \W]\$ '
