@@ -30,6 +30,22 @@ function reset_dwmblocks(){
     fi
 }
 
+function toggle_picom() {
+    if [[ -z "$(pidof picom)" ]]; then
+        echo "[*] Enabling Picom..."
+        (picom &)>/dev/null
+        if [[ "$(pidof picom)" != "" ]]; then 
+            echo "[*] Picom started successfully"
+        else
+            echo "[!] Picom failed to start"
+        fi
+    else
+        echo "[*] Disabling Picom..."
+        killall picom
+        echo "[*] Picom stopped successfully"
+    fi
+}
+
 # Aliases
 alias ls='eza --icons --group-directories-first'
 alias ll='eza --icons --group-directories-first -lh --all'

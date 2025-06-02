@@ -1187,6 +1187,7 @@ static const Key keys[] = {
     {Mod1Mask, XK_F4, spawn, SHCMD("$HOME/.config/rofi/scripts/powermenu_t3")},
     {Mod1Mask, XK_space, spawn, {.v = app_launcher}},
     {Mod1Mask | ShiftMask, XK_l, spawn, {.v = lock_screen}},
+    {MODKEY | ShiftMask, XK_p, spawn, SHCMD("$HOME/.local/bin/toggle_picom")},
     {0, XF86XK_AudioRaiseVolume, spawn,
      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -46 $(pidof "
            "dwmblocks)")},
