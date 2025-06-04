@@ -72,3 +72,8 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 clear
 fastfetch
+
+
+# Generated for pdtm. Do not edit.
+export PATH=$PATH:/home/mowlandcodes/.pdtm/go/bin
+
