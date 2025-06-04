@@ -1,13 +1,48 @@
 #!/bin/bash
 
 # Configuration
-INTERFACE="wlp0s20f3" # Or eth0, enp0s3, etc.
+INTERFACE="wlp0s20f3" # Or eth0, enp0s3, etc. Find with 'ip a'
 INTERVAL=2        # Seconds to wait between readings
 
 # Function to get bytes from /proc/net/dev
 get_bytes() {
-    grep "$INTERFACE" /proc/net/dev | awk '{print $2, $10}' # $2 for RX bytes, $10 for TX bytes
+    # $2 for RX bytes, $10 for TX bytes
+    grep "$INTERFACE" /proc/net/dev | awk '{print $2, $10}'
 }
+
+# Function to format speed with fixed width and appropriate units
+# Usage: format_speed <bytes_per_sec> <padding_width>
+format_speed() {
+    local bytes_per_sec=$1
+    local padding_width=$2 # How many characters total for the number
+    local speed_value
+    local unit
+
+    if (( $(echo "$bytes_per_sec >= 1048576" | bc -l) )); then # MB/s
+        speed_value=$(echo "scale=1; $bytes_per_sec / 1048576" | bc)
+        unit="MB/s"
+    elif (( $(echo "$bytes_per_sec >= 1024" | bc -l) )); then # KB/s
+        speed_value=$(echo "scale=1; $bytes_per_sec / 1024" | bc)
+        unit="KB/s"
+    else # B/s
+        speed_value=$(echo "scale=0; $bytes_per_sec" | bc) # B/s rarely needs decimal
+        unit="B/s"
+    fi
+
+    local full_speed_str="$speed_value $unit"
+    local current_length=${#full_speed_str}
+    local target_length=$padding_width # Define your desired total length for the output string
+    local num_spaces=$((target_length - current_length))
+
+    if [ "$num_spaces" -gt 0 ]; then
+        printf "%${num_spaces}s%s" "" "$full_speed_str" # Pad on the left
+    else
+        echo "$full_speed_str" # No padding needed if already long enough
+    fi
+}
+
+
+# --- Main logic ---
 
 # Initial reading
 read RX_OLD TX_OLD < <(get_bytes)
@@ -22,27 +57,10 @@ read RX_NEW TX_NEW < <(get_bytes)
 RX_DIFF=$((RX_NEW - RX_OLD))
 TX_DIFF=$((TX_NEW - TX_OLD))
 
-# Calculate speed in KB/s (or MB/s, GB/s)
-# Convert bytes to kilobytes per second (divide by 1024 for KB, then by INTERVAL)
-# To display in MB/s, divide by 1024 again (1024 * 1024 = 1048576)
-RX_SPEED_KB=$(echo "scale=2; $RX_DIFF / 1024 / $INTERVAL" | bc)
-TX_SPEED_KB=$(echo "scale=2; $TX_DIFF / 1024 / $INTERVAL" | bc)
+TARGET_SPEED_LENGTH=11 # For example, to fit "99.9 MB/s" with padding
 
-# Determine appropriate unit for display (KB/s, MB/s, GB/s)
-format_speed() {
-    local bytes_per_sec=$1
-    if (( $(echo "$bytes_per_sec >= 1048576" | bc -l) )); then
-        echo "$(echo "scale=2; $bytes_per_sec / 1048576" | bc) MB/s"
-    elif (( $(echo "$bytes_per_sec >= 1024" | bc -l) )); then
-        echo "$(echo "scale=2; $bytes_per_sec / 1024" | bc) KB/s"
-    else
-        echo "$bytes_per_sec B/s"
-    fi
-}
-
-RX_DISPLAY=$(format_speed "$RX_DIFF")
-TX_DISPLAY=$(format_speed "$TX_DIFF")
+RX_DISPLAY=$(format_speed "$RX_DIFF" "$TARGET_SPEED_LENGTH")
+TX_DISPLAY=$(format_speed "$TX_DIFF" "$TARGET_SPEED_LENGTH")
 
 # Output for dunst
-#dunstify -r 9999 "Network Speed" "Download: $RX_DISPLAY  Upload: $TX_DISPLAY"
-echo "󰇚 $RX_DISPLAY 󰕒 $TX_DISPLAY"
+echo "󰇚 $RX_DISPLAY  󰕒 $TX_DISPLAY"
