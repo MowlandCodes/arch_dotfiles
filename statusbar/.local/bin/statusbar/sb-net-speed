@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Configuration
+INTERFACE="wlp0s20f3" # Or eth0, enp0s3, etc.
+INTERVAL=2        # Seconds to wait between readings
+
+# Function to get bytes from /proc/net/dev
+get_bytes() {
+    grep "$INTERFACE" /proc/net/dev | awk '{print $2, $10}' # $2 for RX bytes, $10 for TX bytes
+}
+
+# Initial reading
+read RX_OLD TX_OLD < <(get_bytes)
+
+# Wait for a short interval
+sleep "$INTERVAL"
+
+# Second reading
+read RX_NEW TX_NEW < <(get_bytes)
+
+# Calculate difference
+RX_DIFF=$((RX_NEW - RX_OLD))
+TX_DIFF=$((TX_NEW - TX_OLD))
+
+# Calculate speed in KB/s (or MB/s, GB/s)
+# Convert bytes to kilobytes per second (divide by 1024 for KB, then by INTERVAL)
+# To display in MB/s, divide by 1024 again (1024 * 1024 = 1048576)
+RX_SPEED_KB=$(echo "scale=2; $RX_DIFF / 1024 / $INTERVAL" | bc)
+TX_SPEED_KB=$(echo "scale=2; $TX_DIFF / 1024 / $INTERVAL" | bc)
+
+# Determine appropriate unit for display (KB/s, MB/s, GB/s)
+format_speed() {
+    local bytes_per_sec=$1
+    if (( $(echo "$bytes_per_sec >= 1048576" | bc -l) )); then
+        echo "$(echo "scale=2; $bytes_per_sec / 1048576" | bc) MB/s"
+    elif (( $(echo "$bytes_per_sec >= 1024" | bc -l) )); then
+        echo "$(echo "scale=2; $bytes_per_sec / 1024" | bc) KB/s"
+    else
+        echo "$bytes_per_sec B/s"
+    fi
+}
+
+RX_DISPLAY=$(format_speed "$RX_DIFF")
+TX_DISPLAY=$(format_speed "$TX_DIFF")
+
+# Output for dunst
+#dunstify -r 9999 "Network Speed" "Download: $RX_DISPLAY  Upload: $TX_DISPLAY"
+echo "󰇚 $RX_DISPLAY 󰕒 $TX_DISPLAY"

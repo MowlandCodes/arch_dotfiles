@@ -12,14 +12,15 @@ if [[ "$CONN_TYPE" == "ethernet" ]]; then
     echo "^b#22FFBB^^c#212233^  󰈀  ^d^^c#22FFBB^ Connected^d^"
 elif [[ "$CONN_TYPE" == "wifi" ]]; then
     WIFI_STRENGTH=$(nmcli -t -f in-use,signal d wifi list | grep '*:' | awk -F':' '{print $2}')
+    WIFI_SPEED=$(sb-net-speed)
     if [[ $WIFI_STRENGTH -ge 0 ]] && [[ $WIFI_STRENGTH -lt 25 ]]; then
-        echo "^b#e26c1b^^c#212233^  󰤟  ^d^^c#e26c1b^ Connected^d^"
+        echo "^b#e26c1b^^c#212233^  󰤟  ^d^^c#e26c1b^ $WIFI_SPEED^d^"
     elif [[ $WIFI_STRENGTH -ge 25 ]] && [[ $WIFI_STRENGTH -lt 50 ]]; then
-        echo "^b#ffb046^^c#212233^  󰤢  ^d^^c#ffb046^ Connected^d^"
+        echo "^b#ffb046^^c#212233^  󰤢  ^d^^c#ffb046^ $WIFI_SPEED^d^"
     elif [[ $WIFI_STRENGTH -ge 50 ]] && [[ $WIFI_STRENGTH -lt 75 ]]; then
-        echo "^b#f7d900^^c#212233^  󰤥  ^d^^c#f7d900^ Connected^d^"
+        echo "^b#f7d900^^c#212233^  󰤥  ^d^^c#f7d900^ $WIFI_SPEED^d^"
     elif [[ $WIFI_STRENGTH -ge 75 ]]; then
-        echo "^b#22FFBB^^c#212233^  󰤨  ^d^^c#22FFBB^ Connected^d^"
+        echo "^b#22FFBB^^c#212233^  󰤨  ^d^^c#22FFBB^ $WIFI_SPEED^d^"
     fi
 else
     echo "^b#FF0000^^c#212233^   ^d^^c#FF0000^ Offline^d^"
