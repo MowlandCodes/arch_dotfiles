@@ -62,6 +62,7 @@ alias make_dwmblocks='cd ${HOME}/suckless/dwmblocks; sudo make clean install; cd
 alias reset_dwmblocks='reset_dwmblocks'
 alias cd="z"
 alias lz="lazygit"
+alias dev_esp=". $HOME/Documents/@PRIVACY/@MY_CODE/IoT/esp-idf/export.sh"
 
 # Terminal Prompt
 PS1='[\u@\h \W]\$ '
