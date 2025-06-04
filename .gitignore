@@ -4,3 +4,5 @@ suckless/suckless/**/build/
 statusbar/.local/share
 statusbar/.local/state
 ranger/**/__pycache__
+suckless/suckless/st/config.h
+suckless/suckless/dwm/config.h

@@ -1038,7 +1038,8 @@ static const char *dmenucmd[] = {"dmenu_run",
                                  topbar ? NULL : "-b",
 #endif // BAR_DMENUMATCHTOP_PATCH
                                  NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"st", "-e", "tmux",
+                                NULL}; // Always run tmux when starting terminal
 static const char *browser[] = {"zen-browser", NULL};
 static const char *thunar[] = {"thunar", NULL};
 static const char *app_launcher[] = {
