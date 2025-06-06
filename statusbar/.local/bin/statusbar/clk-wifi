@@ -93,7 +93,7 @@ else
 		nmcli con up "$CHSSID"
 	else
 		if [[ "$CHENTRY" =~ "WPA2" ]] || [[ "$CHENTRY" =~ "WEP" ]]; then
-			WIFIPASS=$(echo "If connection is stored, hit enter" | rofi -dmenu -p "Password: " -lines 1 -font "$FONT" )
+			WIFIPASS=$(echo "If connection is stored, hit enter" | rofi -dmenu -p "Password: " -lines 1 -font "$FONT" -theme $THEME )
 		fi
 		nmcli dev wifi con "$CHSSID" password "$WIFIPASS"
 	fi
