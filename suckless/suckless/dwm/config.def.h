@@ -1038,8 +1038,8 @@ static const char *dmenucmd[] = {"dmenu_run",
                                  topbar ? NULL : "-b",
 #endif // BAR_DMENUMATCHTOP_PATCH
                                  NULL};
-static const char *termcmd[] = {"st", "-e", "tmux",
-                                NULL}; // Always run tmux when starting terminal
+// static const char *termcmd[] = {"st", "-e", "tmux", NULL}; // Always run tmux
+// when starting terminal
 static const char *browser[] = {"zen-browser", NULL};
 static const char *thunar[] = {"thunar", NULL};
 static const char *app_launcher[] = {
@@ -1182,7 +1182,7 @@ static const Key keys[] = {
 #if KEYMODES_PATCH
     {MODKEY, XK_Escape, setkeymode, {.ui = COMMANDMODE}},
 #endif // KEYMODES_PATCH
-    {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY, XK_Return, spawn, SHCMD("st -e tmux new -As terminal")},
     {MODKEY, XK_e, spawn, {.v = thunar}},
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = browser}},
     {Mod1Mask, XK_F4, spawn, SHCMD("$HOME/.config/rofi/scripts/powermenu_t3")},
