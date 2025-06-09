@@ -5,3 +5,4 @@ if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
     . "$HOME/.bashrc"
     fi
 fi
+. "$HOME/.cargo/env"

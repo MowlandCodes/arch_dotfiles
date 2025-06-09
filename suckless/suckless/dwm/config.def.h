@@ -1045,6 +1045,7 @@ static const char *thunar[] = {"thunar", NULL};
 static const char *app_launcher[] = {
     "/home/mowlandcodes/.config/rofi/scripts/launcher_t4", NULL};
 static const char *lock_screen[] = {"betterlockscreen", "-l", "pixel", NULL};
+static const char *screenshot[] = {"flameshot", "gui", NULL};
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -1184,6 +1185,7 @@ static const Key keys[] = {
 #endif // KEYMODES_PATCH
     {MODKEY, XK_Return, spawn, SHCMD("st -e tmux new -As terminal")},
     {MODKEY, XK_e, spawn, {.v = thunar}},
+    {0, XK_Print, spawn, {.v = screenshot}},
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = browser}},
     {Mod1Mask, XK_F4, spawn, SHCMD("$HOME/.config/rofi/scripts/powermenu_t3")},
     {Mod1Mask, XK_space, spawn, {.v = app_launcher}},
