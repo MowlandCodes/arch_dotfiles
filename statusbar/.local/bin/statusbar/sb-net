@@ -4,8 +4,19 @@ case $BLOCK_BUTTON in
     1) clk-wifi;;
 esac
 
+# My Ethernet interface
+ETH_IFACE="enp3s0"
+
 IFNAME=$(nmcli -t -f device,type,state,connection d status | grep ":connected:" | awk -F':' '{print $1}')
 CONN_TYPE=$(nmcli -t -f device,type,state,connection d status | grep ":connected:" | awk -F':' '{print $2}')
+
+# Check whether an Ethernet interface is connected
+for i in ${IFNAME[@]}; do
+    if [[ "$i" == "$ETH_IFACE" ]]; then
+        CONN_TYPE="ethernet"
+    fi
+done
+
 
 # Check for device connection
 if [[ "$CONN_TYPE" == "ethernet" ]]; then

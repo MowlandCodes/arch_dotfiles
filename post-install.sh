@@ -19,18 +19,6 @@ PACKAGES=(base-devel xorg xorg-server xorg-xinit libx11 libxinerama libxft webki
 # List of dotfiles to stow
 DOTFILES=(bash dunst gtk nvim picom ranger rofi starship statusbar suckless wallpaper zathura)
 
-# Checking for yay binaries
-if [[ -z "$(command -v yay)" ]]; then
-    echo -e "$INFO[*]$NORMAL Installing$INFO Yay$NORMAL..."
-    pacman -Sy --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
-    echo -e "$SUCCESS[*]$NORMAL Yay installed successfully!"
-else
-    echo -e "$SUCCESS[*]$NORMAL Yay already installed..."
-fi
-
 # Install starship for prompt decoration
 if [[ "$(command -v curl)" ]]; then
     curl -sS https://starship.rs/install.sh | sh
