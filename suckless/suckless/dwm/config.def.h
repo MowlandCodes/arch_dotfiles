@@ -538,18 +538,18 @@ static const Rule rules[] = {
      *	WM_WINDOW_ROLE(STRING) = role
      *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
      */
-    // class        instance  title wintype  tags mask  isfloating  monitor
-    {"Gimp",            NULL, NULL, NULL,      1 << 4, 0, -1},
-    {"Firefox",         NULL, NULL, NULL,      1 << 7, 0, -1},
-    {"xdman-main",      NULL, NULL, NULL,      0,      1, -1},
-    {"pavucontrol",     NULL, NULL, NULL,      0,      1, -1},
-    {"ZapZap",          NULL, NULL, NULL,      1 << 4, 0, -1},
-    {"zen",             NULL, NULL, NULL,      1 << 2, 0, -1},
-    {"Blueman-manager", NULL, NULL, NULL,      0,      1, -1},
-    {NULL,              NULL, NULL, "DIALOG",  0,      1, -1},
-    {NULL,              NULL, NULL, "UTILITY", 0,      1, -1},
-    {NULL,              NULL, NULL, "TOOLBAR", 0,      1, -1},
-    {NULL,              NULL, NULL, "SPLASH",  0,      1, -1},
+    // class        instance  title wintype       tags mask  isfloating  monitor
+    {"Gimp",            NULL, NULL, NULL,            1 << 4, 0, -1},
+    {"Firefox",         NULL, NULL, NULL,            1 << 7, 0, -1},
+    {"xdman-main",      NULL, NULL, NULL,            0,      1, -1},
+    {"pavucontrol",     NULL, NULL, NULL,            0,      1, -1},
+    {"ZapZap",          NULL, NULL, NULL,            1 << 4, 0, -1},
+    {"zen",             NULL, NULL, NULL,            1 << 2, 0, -1},
+    {"Blueman-manager", NULL, NULL, NULL,            0,      1, -1},
+    {NULL,              NULL, NULL, WTYPE "DIALOG",  0,      1, -1},
+    {NULL,              NULL, NULL, WTYPE "UTILITY", 0,      1, -1},
+    {NULL,              NULL, NULL, WTYPE "TOOLBAR", 0,      1, -1},
+    {NULL,              NULL, NULL, WTYPE "SPLASH",  0,      1, -1},
 
 #if RENAMED_SCRATCHPADS_PATCH
     RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
