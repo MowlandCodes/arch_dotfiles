@@ -1,0 +1,6 @@
+BasedOnStyle: Microsoft
+IndentWidth: 4
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros: Consecutive

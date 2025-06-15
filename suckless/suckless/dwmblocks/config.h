@@ -17,8 +17,9 @@
 #define TRAILING_DELIMITER 0
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
+// Keep the weather interval >= 30 seconds. Rate Limit issues.... LOL
 #define BLOCKS(X)                                          \
-    X("", "sb-weather", 5, 5)                              \
+    X("", "sb-weather", 30, 5)                             \
     X("^b#C6A0F6^^c#212233^   ^d^ ", "sb-mem", 3, 3)    \
     X("", "sb-volume", 0, 12)                              \
     X("", "sb-battery", 5, 11)                             \
