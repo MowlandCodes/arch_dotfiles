@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Environment Variables
-export PATH="${HOME}/.local/bin:${HOME}/.local/bin/statusbar:${HOME}/go/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${HOME}/.local/bin/statusbar:${HOME}/go/bin:/sbin:${PATH}"
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR="nvim"
