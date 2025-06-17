@@ -19,7 +19,7 @@ host=`cat /etc/hostname`
 
 # Options
 
-shutdown=''
+shutdown='󰐥'
 reboot=''
 lock=''
 suspend='󰤁'
