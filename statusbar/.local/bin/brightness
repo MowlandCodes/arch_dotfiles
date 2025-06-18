@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+MIN_BRIGHTNESS=100
+
+if [[ $1 == "up" ]]; then
+    (brightnessctl -q -d "intel_backlight" set 10%+)>/dev/null
+elif [[ $1 == "down" ]]; then
+    (brightnessctl -q -d "intel_backlight" set 10%-)>/dev/null
+    CURRENT_BRIGHTNESS=$(brightnessctl -d "intel_backlight" g)
+    if [[ $CURRENT_BRIGHTNESS -lt $MIN_BRIGHTNESS ]]; then
+        (brightnessctl -q -d "intel_backlight" set $MIN_BRIGHTNESS)>/dev/null
+    fi
+fi
+
+

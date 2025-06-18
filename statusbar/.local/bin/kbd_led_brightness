@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "up" ]]; then
+    (brightnessctl -d "rgb:kbd_backlight" set 20%+)>/dev/null
+elif [[ "$1" == "down" ]]; then
+    (brightnessctl -d "rgb:kbd_backlight" set 20%-)>/dev/null
+fi

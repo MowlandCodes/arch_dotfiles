@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "$1 $2 $3" | tee "/sys/devices/platform/tuxedo_keyboard/leds/rgb:kbd_backlight/multi_intensity" >/dev/null
+echo -e "\x1b[32;1m[*]\x1b[0m Keyboard LED set to \x1b[36;1mrgb($1, $2, $3)\x1b[0m"
