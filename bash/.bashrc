@@ -46,6 +46,9 @@ function toggle_picom() {
     fi
 }
 
+# Options
+set -o vi
+
 # Aliases
 alias ls='eza --icons --group-directories-first'
 alias ll='eza --icons --group-directories-first -lh --all'
