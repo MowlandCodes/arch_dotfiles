@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-    1) setsid -f "st" -e nmtui;;
+    1) setsid -f "kitty" -e nmtui;;
 esac
 
 # My Ethernet interface
@@ -20,7 +20,7 @@ done
 
 # Check for device connection
 if [[ "$CONN_TYPE" == "ethernet" ]]; then
-    echo "^b#22FFBB^^c#212233^  󰈀  ^d^^c#22FFBB^ Connected^d^"
+    echo "^b#22FFBB^^c#212233^ 🖧 ^d^^c#22FFBB^ Connected^d^"
 elif [[ "$CONN_TYPE" == "wifi" ]]; then
     WIFI_STRENGTH=$(nmcli -t -f in-use,signal d wifi list | grep '*:' | awk -F':' '{print $2}')
     WIFI_SPEED=$(sb-net-speed)

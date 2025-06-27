@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-    1) setsid -f "st" -e btop ;;
+    1) setsid -f "kitty" -e btop ;;
 esac
 
 echo "^c#C6A0F6^$(free -h | awk '/^Mem/ {print $3"/"$2}' | sed 's/i//g')^d^"
