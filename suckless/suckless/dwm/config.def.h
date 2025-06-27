@@ -1068,7 +1068,7 @@ static const Key keys[] = {
 #if KEYMODES_PATCH
     {MODKEY,                           XK_Escape,                setkeymode,             {.ui = COMMANDMODE}                                                           },
 #endif  // KEYMODES_PATCH
-    {MODKEY,                           XK_Return,                spawn,                  SHCMD("st -e tmux new -As terminal")                                          },
+    {MODKEY,                           XK_Return,                spawn,                  SHCMD("kitty")                                                                },
     {MODKEY,                           XK_e,                     spawn,                  {.v = thunar}                                                                 },
     {0,                                XK_Print,                 spawn,                  {.v = screenshot}                                                             },
     {MODKEY | ShiftMask,               XK_Return,                spawn,                  {.v = browser}                                                                },
