@@ -23,7 +23,7 @@ else
 fi
 
 # List of packages to install
-PACKAGES=(base-devel xorg xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk bluez bluez-utils blueman pulseaudio pulseaudio-alsa pulseaudio-bluetooth midori-bin picom neovim fastfetch net-tools wireless_tools curl wget zathura ranger rofi dunst xgifwallpaper stow nodejs npm lua python prettierd ueberzugpp cmake make zoxide ttf-jetbrains-mono-nerd eza go gtk3 xcur2png jq cupsd nvidia-dkms nvidia-utils nvidia-settings tuxedo-drivers-dkms ristretto libreoffice-fresh flameshot brightnessctl nwg-look flatpak ly betterlockscreen feh vlc cups simple-scan-git epson-inkjet-printer-escpr epson-inkjet-printer-escpr2)
+PACKAGES=(base-devel xorg xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk bluez bluez-utils blueman pulseaudio pulseaudio-alsa pulseaudio-bluetooth midori-bin picom neovim fastfetch net-tools wireless_tools curl wget zathura ranger rofi dunst xgifwallpaper stow nodejs npm lua python prettierd ueberzugpp cmake make zoxide ttf-jetbrains-mono-nerd eza go gtk3 xcur2png jq cupsd nvidia-dkms nvidia-utils nvidia-settings tuxedo-drivers-dkms ristretto libreoffice-fresh flameshot brightnessctl nwg-look flatpak ly betterlockscreen feh vlc cups simple-scan-git epson-inkjet-printer-escpr epson-inkjet-printer-escpr2 kitty)
 
 # Installing all packages
 echo -e "$INFO[*]$NORMAL Installing all necessary packages"
