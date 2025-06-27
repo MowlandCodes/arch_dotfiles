@@ -51,5 +51,5 @@ elif [[ "$BATTERY_STATUS" == "Discharging" ]]; then
         echo "^b#FF3000^^c#212233^ 󰂎 ^d^ ^c#FF3000^$BATTERY_CAPACITY%"
     fi
 elif [[ "$BATTERY_STATUS" == "Full" ]] && [[ "$BATTERY_CAPACITY" == 100 ]]; then
-    echo "^b#99FF00^^c#212233^ 󰁹 ^d^ ^c#99FF00^$BATTERY_CAPACITY%^d^"
+    echo "^b#99FF00^^c#212233^ 󰂄 ^d^ ^c#99FF00^$BATTERY_CAPACITY%^d^"
 fi

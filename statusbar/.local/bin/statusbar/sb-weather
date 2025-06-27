@@ -3,7 +3,7 @@
 REGION="Ponorogo"
 
 case $BLOCK_BUTTON in
-    1) st -e bash -c "curl -s wttr.in/$REGION > /tmp/weather_report; bat /tmp/weather_report && read -p 'Press Enter to continue... '";;
+    1) setsid -f "kitty" -e bash -c "curl -s wttr.in/$REGION > /tmp/weather_report; bat /tmp/weather_report && read -p 'Press Enter to continue... '";;
 esac
 
 TEMPERATURE=$(curl -s "https://api.open-meteo.com/v1/forecast?latitude=-7.8842&longitude=111.4955&current=temperature_2m&timezone=Asia/Jakarta" | jq .current.temperature_2m)
