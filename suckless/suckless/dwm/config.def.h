@@ -1069,6 +1069,7 @@ static const Key keys[] = {
     {MODKEY,                           XK_Escape,                setkeymode,             {.ui = COMMANDMODE}                                                           },
 #endif  // KEYMODES_PATCH
     {MODKEY,                           XK_Return,                spawn,                  SHCMD("kitty")                                                                },
+    {MODKEY | ShiftMask,               XK_apostrophe,            spawn,                  SHCMD("emoji-picker")                                                         },
     {MODKEY,                           XK_e,                     spawn,                  {.v = thunar}                                                                 },
     {0,                                XK_Print,                 spawn,                  {.v = screenshot}                                                             },
     {MODKEY | ShiftMask,               XK_Return,                spawn,                  {.v = browser}                                                                },
