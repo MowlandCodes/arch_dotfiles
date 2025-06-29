@@ -1,0 +1,45 @@
+# This is a Makefile for a small project
+# If you have only several C file and several header files in your project,
+# this file can help you
+
+
+CC := gcc
+CFLAGS := -Wall -Wextra -std=c99 -g
+
+# Add some link flags for the linker
+LDFLAGS := 
+
+# The sources and the object files
+BUILDDIR := ./build
+SRCS := $(wildcard *.c)
+OBJS := $(patsubst %.c, $(BUILDDIR)/%.o, $(SRCS))
+
+TARGETS := $(patsubst $(BUILDDIR)/%.o, $(BUILDDIR)/%, $(OBJS))
+
+.PHONY: all clean
+
+all: $(TARGETS)
+	@echo "[*] Building project..."
+
+$(BUILDDIR):
+	@echo "[*] Creating project directory..."
+	@mkdir -p $@
+	@echo "[*] Done!"
+
+clean:
+	@echo "[*] Cleaning project directory..."
+	@rm -rf $(BUILDDIR)
+	@echo "[*] Done!"
+
+$(BUILDDIR)/%: $(BUILDDIR)/%.o
+	@echo "[*] Linking object files..."
+	@$(CC) $(LDFLAGS) $< -o $@
+	@echo "[+] Linking done!"
+	@rm -f $<
+
+$(BUILDDIR)/%.o: %.c | $(BUILDDIR)
+	@echo "[*] Compiling $<..."
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "[+] Compilation done!"
+
+
