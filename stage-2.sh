@@ -26,6 +26,7 @@ echo -e "$INFO[*]$NORMAL Stowing all dotfiles...\n"
 for dotfile in "${DOTFILES[@]}"; do
     echo -e "$INFO[*]$NORMAL Configuring $INFO$dotfile$NORMAL..."
     if [[ "$dotfile" == "suckless" ]]; then
+        stow --target="$HOME" "$dotfile"
         # Compile dwm
         cd $HOME/suckless/dwm  
         rm patches.h config.h # Ensure it's a clean install
@@ -47,6 +48,7 @@ for dotfile in "${DOTFILES[@]}"; do
         echo -e "$SUCCESS[*]$NORMAL Installed$INFO st$NORMAL..."
     elif [[ "$dotfile" == "wallpaper" ]]; then
         # Copy the wallpaper into /usr/share/wallpapers/
+        stow --target="$HOME" "$dotfile"
         mkdir -p /usr/share/wallpapers
         cp $HOME/wallpaper.gif /usr/share/wallpapers/
     else
