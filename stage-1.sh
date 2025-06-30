@@ -12,7 +12,7 @@ NORMAL="\x1b[0m"
 # Checking for yay binaries
 if [[ -z "$(command -v yay)" ]]; then
     echo -e "$INFO[*]$NORMAL Installing$INFO Yay$NORMAL..."
-    pacman -Sy --needed git base-devel
+    sudo pacman -Sy --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
