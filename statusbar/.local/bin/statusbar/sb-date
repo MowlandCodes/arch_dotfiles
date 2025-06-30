@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "^b#45ABBB^^c#212233^    ^d^ ^c#45ABBB^ $(date +"%b %d, %Y")^d^"
