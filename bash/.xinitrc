@@ -1,6 +1,7 @@
 dbus-launch &
 dunst &
 pulseaudio --start
+blueman-tray
 # Uncomment if you have picom installed and want a transparent background
 #picom &
 xgifwallpaper -s FILL ~/wallpaper.gif &
