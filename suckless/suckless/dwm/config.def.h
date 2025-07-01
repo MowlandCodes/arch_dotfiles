@@ -544,7 +544,7 @@ static const Rule rules[] = {
     {"xdman-main",      NULL, NULL, NULL,            0,      1, -1},
     {"pavucontrol",     NULL, NULL, NULL,            0,      1, -1},
     {"ZapZap",          NULL, NULL, NULL,            1 << 4, 0, -1},
-    {"midori",          NULL, NULL, NULL,            1 << 2, 0, -1},
+    {"librewolf",       NULL, NULL, NULL,            1 << 2, 0, -1},
     {"Blueman-manager", NULL, NULL, NULL,            0,      1, -1},
     {NULL,              NULL, NULL, WTYPE "DIALOG",  0,      1, -1},
     {NULL,              NULL, NULL, WTYPE "UTILITY", 0,      1, -1},
@@ -926,7 +926,7 @@ static const char *dmenucmd[] = {"dmenu_run",
                                  NULL};
 // static const char *termcmd[] = {"st", "-e", "tmux", NULL}; // Always run
 // tmux when starting terminal
-static const char *browser[]      = {"midori", NULL};
+static const char *browser[]      = {"librewolf", NULL};
 static const char *thunar[]       = {"thunar", NULL};
 static const char *app_launcher[] = {"/home/mowlandcodes/.config/rofi/scripts/launcher_t4", NULL};
 static const char *lock_screen[]  = {"betterlockscreen", "-l", "pixel", NULL};
