@@ -7,4 +7,5 @@ blueman-applet &
 xgifwallpaper -s FILL ~/wallpaper.gif &
 xrandr --output eDP-1 --mode 1920x1080 --primary # Set Laptop screen as primary display
 xrandr --output HDMI-1 --mode 1920x1080 --rate 74.97 --left-of eDP-1 # Set external display
+xset s off -dpms # Prevent screen from sleeping
 exec dwm
