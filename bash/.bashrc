@@ -46,6 +46,23 @@ function toggle_picom() {
     fi
 }
 
+function mk_c() {
+    PROJECTDIR="${PWD}/$1";
+    MAKE_TEMPLATE_PATH="${HOME}/.dotfiles/misc/Makefile.mk"
+
+    echo "[*] Creating project directory: ${PROJECTDIR}"
+    mkdir -p "${PROJECTDIR}"
+
+    echo "[*] Copying Makefile template to ${PROJECTDIR}"
+    cp "$MAKE_TEMPLATE_PATH" "$PROJECTDIR/Makefile"
+
+    echo "[*] Project directory created successfully"
+    clang-format --dump-config -style Microsoft > "$PROJECTDIR/.clang-format"
+    echo "[*] Clang-format config created successfully"
+    echo "[*] Changing to project directory: ${PROJECTDIR}"
+    cd "$PROJECTDIR" || exit
+}
+
 # Options
 set -o vi
 
