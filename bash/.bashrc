@@ -82,6 +82,8 @@ alias make_dwmblocks='cd ${HOME}/suckless/dwmblocks; sudo make clean install; cd
 alias reset_dwmblocks='reset_dwmblocks'
 alias cd="z"
 alias lz="lazygit"
+alias m_dup="xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1"
+alias m_ext="xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1"
 alias dev_esp=". $HOME/Documents/@PRIVACY/@MY_CODE/IoT/esp-idf/export.sh"
 
 # Terminal Prompt
