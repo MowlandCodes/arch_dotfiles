@@ -1079,8 +1079,8 @@ static const Key keys[] = {
     {MODKEY | ShiftMask,               XK_p,                     spawn,                  SHCMD("$HOME/.local/bin/toggle_picom")                                        },
     {0,                                XF86XK_AudioRaiseVolume,  spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -46 $(pidof dwmblocks)")},
     {0,                                XF86XK_AudioLowerVolume,  spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -46 $(pidof dwmblocks)")},
-    {0,                                XF86XK_KbdBrightnessUp,   spawn,                  SHCMD("kbd_led_brightness up")                                                },
-    {0,                                XF86XK_KbdBrightnessDown, spawn,                  SHCMD("kbd_led_brightness down")                                              },
+    {0,                                XF86XK_KbdBrightnessUp,   spawn,                  SHCMD("$HOME/.local/bin/kbd_led_brightness up")                               },
+    {0,                                XF86XK_KbdBrightnessDown, spawn,                  SHCMD("$HOME/.local/bin/kbd_led_brightness down")                             },
     {0,                                XF86XK_MonBrightnessUp,   spawn,                  SHCMD("$HOME/.local/bin/brightness up")                                       },
     {0,                                XF86XK_MonBrightnessDown, spawn,                  SHCMD("$HOME/.local/bin/brightness down")                                     },
 #if RIODRAW_PATCH
