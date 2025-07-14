@@ -1075,6 +1075,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask,               XK_Return,                spawn,                  {.v = browser}                                                                },
     {Mod1Mask,                         XK_F4,                    spawn,                  SHCMD("$HOME/.config/rofi/scripts/powermenu_t3")                              },
     {Mod1Mask,                         XK_space,                 spawn,                  {.v = app_launcher}                                                           },
+    {ControlMask | Mod1Mask,           XK_space,                 spawn,                  SHCMD("$HOME/.local/bin/rofi-calc")                                           },
     {Mod1Mask | ShiftMask,             XK_l,                     spawn,                  {.v = lock_screen}                                                            },
     {MODKEY | ShiftMask,               XK_p,                     spawn,                  SHCMD("$HOME/.local/bin/toggle_picom")                                        },
     {0,                                XF86XK_AudioRaiseVolume,  spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -46 $(pidof dwmblocks)")},
