@@ -194,9 +194,9 @@ static void (*bartabmonfns[])(Monitor *) = {NULL /* , customlayoutfn */};
 #if BAR_PANGO_PATCH
 static const char font[] = "monospace 10";
 #else
-static const char *fonts[] = {"JetBrainsMono Nerd Font:pixelsize=13:style=bold",
-                              "NotoColorEmoji:pixelsize=13:antialias=true:autohint=true:style=bold",
-                              "monospace:pixelsize=13:style=bold"};
+static const char *fonts[] = {"JetBrainsMono Nerd Font:pixelsize=15:style=bold",
+                              "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true:style=bold",
+                              "monospace:pixelsize=15:style=bold"};
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[] = "monospace:size=10";
 
