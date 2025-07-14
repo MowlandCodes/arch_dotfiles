@@ -1,0 +1,1 @@
+rofi -modi emoji -show emoji -kb-secondary-copy "" -kb-custom-1 Ctrl+c -theme ~/.config/rofi/launchers/type-4/style-1.rasi

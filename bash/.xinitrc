@@ -1,5 +1,6 @@
 dbus-launch &
 dunst &
+parcellite &
 pulseaudio --start
 blueman-applet &
 # Uncomment if you have picom installed and want a transparent background
