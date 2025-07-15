@@ -153,6 +153,11 @@ return {
             })
             lspconfig.nim_langserver.setup({
                 capabilities = capabilities,
+                settings = {
+                    nim = {
+                        nimsuggestPath = "~/.nimble/bin/nimsuggest"
+                    }
+                }
             })
 
             -- Keymapping for Tooltip Docs
