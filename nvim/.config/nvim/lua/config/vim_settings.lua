@@ -19,6 +19,13 @@ vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon
 vim.opt.wrap = true
 vim.g.lazyvim_php_lsp = "intelephense"
 
+vim.filetype.add({
+    extension = {
+        astro = "astro",
+        mdx = "mdx",
+    }
+})
+
 vim.diagnostic.config({
     underline = true,
     virtual_text = {
@@ -42,3 +49,4 @@ vim.filetype.add({ extension = { ejs = "ejs" } })
 vim.treesitter.language.register("html", "ejs")
 vim.treesitter.language.register("javascript", "ejs")
 vim.treesitter.language.register("embedded_template", "ejs")
+vim.treesitter.language.register("markdown", "mdx")
