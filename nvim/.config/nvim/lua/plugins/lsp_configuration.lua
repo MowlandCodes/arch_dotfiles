@@ -159,6 +159,9 @@ return {
                     }
                 }
             })
+            lspconfig.astro.setup({
+                capabilities = capabilities,
+            })
 
             -- Keymapping for Tooltip Docs
             vim.keymap.set("n", "<leader>lh", function()
