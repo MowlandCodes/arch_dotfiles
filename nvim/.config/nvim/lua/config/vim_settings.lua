@@ -12,36 +12,36 @@ vim.opt["softtabstop"] = 4
 vim.o.statusline = "%f"
 vim.opt.smartindent = true
 vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
-    .. "i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
-    .. "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
-    .. "o:hor50"
+	.. "i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
+	.. "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
+	.. "o:hor50"
 
 vim.opt.wrap = true
 vim.g.lazyvim_php_lsp = "intelephense"
 
 vim.filetype.add({
-    extension = {
-        astro = "astro",
-        mdx = "mdx",
-    }
+	extension = {
+		astro = "astro",
+		mdx = "mdx",
+	},
 })
 
 vim.diagnostic.config({
-    underline = true,
-    virtual_text = {
-        spacing = 4,
-        prefix = "",
-    },
-    update_in_insert = false,
-    severity_sort = true,
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
-            [vim.diagnostic.severity.HINT] = " ",
-            [vim.diagnostic.severity.INFO] = " ",
-        },
-    },
+	underline = true,
+	virtual_text = {
+		spacing = 4,
+		prefix = "",
+	},
+	update_in_insert = true,
+	severity_sort = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+		},
+	},
 })
 
 -- Adding EJS File Type
