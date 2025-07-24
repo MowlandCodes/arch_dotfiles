@@ -100,4 +100,4 @@ fastfetch
 # Generated for pdtm. Do not edit.
 export PATH=$PATH:/home/mowlandcodes/.pdtm/go/bin
 
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
