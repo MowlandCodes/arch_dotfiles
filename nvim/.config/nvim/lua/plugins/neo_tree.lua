@@ -9,7 +9,16 @@ return {
 			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 
+		config = function()
+			require("neo-tree").setup({
+				window = {
+					position = "right",
+					width = 30,
+				},
+			})
+		end,
+
 		-- Neo-Tree Keybindings
-		vim.keymap.set("n", "<F2>", ":Neotree right toggle<CR>", { desc = "Neo-Tree Reveal", silent = true }),
+		vim.keymap.set("n", "<F2>", ":Neotree toggle<CR>", { desc = "Neo-Tree Reveal", silent = true }),
 	},
 }
