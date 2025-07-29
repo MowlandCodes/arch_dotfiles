@@ -17,12 +17,12 @@
 #define TRAILING_DELIMITER 0
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
-#define BLOCKS(X)             \
-    X("", "sb-net", 2, 3)     \
-    X("", "sb-mem", 3, 1)     \
-    X("", "sb-volume", 0, 12) \
-    X("", "sb-battery", 5, 2) \
-    X("", "sb-clock", 5, 2)   \
+#define BLOCKS(X)                     \
+    X("", "sb-locale-switcher", 0, 5) \
+    X("", "sb-net", 2, 3)             \
+    X("", "sb-mem", 3, 1)             \
+    X("", "sb-volume", 0, 12)         \
+    X("", "sb-battery", 5, 2)         \
+    X("", "sb-clock", 5, 2)           \
     X("", "sb-date", 60, 2)
-
 #endif  // CONFIG_H

@@ -1068,6 +1068,7 @@ static const Key keys[] = {
 #if KEYMODES_PATCH
     {MODKEY,                           XK_Escape,                setkeymode,             {.ui = COMMANDMODE}                                                           },
 #endif  // KEYMODES_PATCH
+    {ControlMask,                      XK_space,                 spawn,                  SHCMD("kill -39 $(pidof dwmblocks)")                                          },
     {MODKEY,                           XK_Return,                spawn,                  SHCMD("kitty")                                                                },
     {MODKEY | ShiftMask,               XK_apostrophe,            spawn,                  SHCMD("$HOME/.local/bin/emoji-picker")                                        },
     {MODKEY,                           XK_e,                     spawn,                  {.v = thunar}                                                                 },
