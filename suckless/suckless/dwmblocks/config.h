@@ -24,5 +24,5 @@
     X("", "sb-volume", 0, 12)         \
     X("", "sb-battery", 5, 2)         \
     X("", "sb-clock", 5, 2)           \
-    X("", "sb-date", 60, 2)
+    X("", "sb-date", 60, 4)
 #endif  // CONFIG_H

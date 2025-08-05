@@ -1,3 +1,7 @@
 #!/bin/bash
 
+case $BLOCK_BUTTON in
+    1) setsid -f "kitty" -e bash -c "cal -y -c 8; read -p 'Press enter to close...'";;
+esac
+
 echo "^b#45ABBB^^c#212233^    ^d^ ^c#45ABBB^ $(date +"%b %d, %Y")^d^"
