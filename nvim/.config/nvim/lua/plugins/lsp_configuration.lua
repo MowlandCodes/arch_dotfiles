@@ -155,11 +155,14 @@ return {
                 capabilities = capabilities,
                 settings = {
                     nim = {
-                        nimsuggestPath = "~/.nimble/bin/nimsuggest"
-                    }
-                }
+                        nimsuggestPath = "~/.nimble/bin/nimsuggest",
+                    },
+                },
             })
             lspconfig.astro.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.prismals.setup({
                 capabilities = capabilities,
             })
 
