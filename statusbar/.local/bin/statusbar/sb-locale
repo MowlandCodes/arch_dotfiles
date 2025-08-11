@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+    1) sb-locale-switcher;;
+esac
+
+
+CURRENT_LOCALE=$(setxkbmap -query | grep 'layout' | awk '{ print $2 }')
+
+if [[ "${CURRENT_LOCALE}" == "us" ]]; then
+    FLAG="󰀬"
+elif [[ "${CURRENT_LOCALE}" == "ara" ]]; then
+    FLAG="ع"
+fi
+
+echo "^b#bcdeff^^c#212233^ ${FLAG} ^d^^c#bcdeff^ ${CURRENT_LOCALE^^}^d^"

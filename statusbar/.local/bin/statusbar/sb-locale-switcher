@@ -1,26 +1,17 @@
 #!/bin/bash
 
-case $BLOCK_BUTTON in
-    1) toggle_locale;;
-esac
-
-
 CURRENT_LOCALE=$(setxkbmap -query | grep 'layout' | awk '{ print $2 }')
 
 toggle_locale() {
     if [[ "${CURRENT_LOCALE}" == "us" ]]; then
         setxkbmap ara
         CURRENT_LOCALE=$(setxkbmap -query | grep 'layout' | awk '{ print $2 }')
-        FLAG="ع"
         dunstify -r 2593 -a "locale" -t 1000 "Locale" "Switched locale to: <b>${CURRENT_LOCALE^^}</b>"
     elif [[ "${CURRENT_LOCALE}" == "ara" ]]; then
         setxkbmap us
         CURRENT_LOCALE=$(setxkbmap -query | grep 'layout' | awk '{ print $2 }')
-        FLAG="󰀬"
         dunstify -r 2593 -a "locale" -t 1000 "Locale" "Switched locale to: <b>${CURRENT_LOCALE^^}</b>"
     fi
 }
 
 toggle_locale
-
-echo "^b#bcdeff^^c#212233^ ${FLAG} ^d^^c#bcdeff^ ${CURRENT_LOCALE^^}^d^"
