@@ -930,7 +930,7 @@ static const char *browser[]      = {"librewolf", NULL};
 static const char *thunar[]       = {"thunar", NULL};
 static const char *app_launcher[] = {"/home/mowlandcodes/.config/rofi/scripts/launcher_t4", NULL};
 static const char *lock_screen[]  = {"betterlockscreen", "-l", "pixel", NULL};
-static const char *screenshot[]   = {"ksnip", "-r", NULL};
+static const char *screenshot[]   = {"flameshot", "gui", NULL};
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
