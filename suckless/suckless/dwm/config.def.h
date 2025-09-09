@@ -543,7 +543,7 @@ static const Rule rules[] = {
     // class                  instance  title wintype       tags mask  isfloating  monitor
     {"Free Download Manager", NULL, NULL, WTYPE "NORMAL",  0,      1, -1},
     {"pavucontrol",           NULL, NULL, NULL,            0,      1, -1},
-    {"ZapZap",                NULL, NULL, NULL,            1 << 4, 0, -1},
+    {"WhatSie",               NULL, NULL, NULL,            1 << 4, 0, -1},
     {"librewolf",             NULL, NULL, NULL,            1 << 2, 0, -1},
     {"Blueman-manager",       NULL, NULL, NULL,            0,      1, -1},
     {NULL,                    NULL, NULL, WTYPE "DIALOG",  0,      1, -1},
