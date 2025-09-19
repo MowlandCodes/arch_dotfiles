@@ -5,6 +5,7 @@ vim.cmd("set autoindent")
 vim.cmd("set mouse=a")
 vim.cmd("set nohlsearch")
 vim.cmd("set clipboard=unnamedplus")
+vim.cmd("set noswapfile")
 vim.opt.expandtab = true
 vim.opt["tabstop"] = 2
 vim.opt["shiftwidth"] = 2

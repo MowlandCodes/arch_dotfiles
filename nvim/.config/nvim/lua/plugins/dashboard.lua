@@ -6,9 +6,9 @@ return {
 		dashboard.setup({
 			theme = "hyper",
 			shortcut_type = "number",
-            disable_move = true,
+			disable_move = true,
 			config = {
-                disable_move = true,
+				disable_move = true,
 				header = {
 					"",
 					" ███╗   ███╗ ██████╗ ██╗    ██╗██╗      █████╗ ███╗   ██╗██████╗  ",
@@ -42,17 +42,17 @@ return {
 						key_format = " [%s]",
 					},
 					{
-                        desc = "  Exit",
-                        group = "DashboardFooter",
-                        action = "qa",
-                        key = "q",
-                        key_format = " [%s]"
-                    },
+						desc = "  Exit",
+						group = "DashboardFooter",
+						action = "qa",
+						key = "q",
+						key_format = " [%s]",
+					},
 				},
-                mru = {
-                    enable = true,
-                    limit = 10,
-                }
+				mru = {
+					enable = true,
+					limit = 10,
+				},
 			},
 		})
 	end,
