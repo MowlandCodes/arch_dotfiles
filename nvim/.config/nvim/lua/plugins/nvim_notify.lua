@@ -39,7 +39,7 @@ return {
 			fps = 60,
 			render = "default",
 			stages = "slide",
-			timeout = 1700,
+			timeout = 300,
 			max_height = 10,
 			max_width = 80,
 		})

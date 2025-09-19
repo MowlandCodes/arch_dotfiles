@@ -48,129 +48,95 @@ return {
 		},
 
 		config = function()
-			local lspconfig = require("lspconfig")
-			local blink = require("blink.cmp")
-			local capabilities = blink.get_lsp_capabilities()
-
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { "vim" },
-						},
-						workspace = {
-							library = {
-								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-								[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-								[vim.fn.stdpath("config") .. "/lua"] = true,
+			local servers = {
+				lua_ls = {
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+							workspace = {
+								library = {
+									[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+									[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+									[vim.fn.stdpath("config") .. "/lua"] = true,
+								},
 							},
 						},
 					},
 				},
-			})
-			lspconfig.ast_grep.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.jedi_language_server.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.clangd.setup({
-				cmd = {
-					"clangd",
-					"--fallback-style=webkit",
-				},
-				capabilities = capabilities,
-			})
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.html.setup({
-				filetypes = { "html", "htmldjango", "php", "blade", "ejs" },
-				capabilities = capabilities,
-			})
-			lspconfig.djlsp.setup({
-				cmd = { "/home/mowlandcodes/.local/bin/djlsp" },
-				capabilities = capabilities,
-			})
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.biome.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ltex.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.phpactor.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.intelephense.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-				filetypes = {
-					"javascript",
-					"typescript",
-					"javascriptreact",
-					"typescriptreact",
-					"ejs",
-				},
-			})
-			lspconfig.emmet_language_server.setup({
-				capabilities = capabilities,
-				filetypes = {
-					"html",
-					"javascript",
-					"typescript",
-					"javascriptreact",
-					"typescriptreact",
-					"css",
-					"php",
-					"htmldjango",
-					"blade",
-					"ejs",
-				},
-			})
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-				filetypes = {
-					"html",
-					"php",
-					"blade",
-					"htmldjango",
-				},
-			})
-			lspconfig.asm_lsp.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.powershell_es.setup({
-				capabilities = capabilities,
-				bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
-				filetypes = "ps1",
-			})
-			lspconfig.nim_langserver.setup({
-				capabilities = capabilities,
-				settings = {
-					nim = {
-						nimsuggestPath = "~/.nimble/bin/nimsuggest",
+				ast_grep = {},
+				clangd = {},
+				jq_lsp = {},
+				cssls = {},
+				html = {},
+				bashls = {},
+				biome = {},
+				ltex = {},
+				pyright = {},
+				phpactor = {},
+				intelephense = {},
+				ts_ls = {
+					filetypes = {
+						"javascript",
+						"typescript",
+						"javascriptreact",
+						"typescriptreact",
 					},
 				},
-			})
-			lspconfig.astro.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.prismals.setup({
-				cmd = { "prisma-language-server", "--stdio" },
-				capabilities = capabilities,
-				filetypes = {
-					"prisma",
+				emmet_language_server = {
+					filetypes = {
+						"html",
+						"javascript",
+						"typescript",
+						"javascriptreact",
+						"typescriptreact",
+						"css",
+						"php",
+						"htmldjango",
+						"blade",
+						"ejs",
+					},
 				},
-			})
+				tailwindcss = {
+					filetypes = {
+						"html",
+						"php",
+						"blade",
+						"htmldjango",
+					},
+				},
+				powershell_es = {
+					bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
+					filetypes = "ps1",
+				},
+				nim_langserver = {
+					settings = {
+						nim = {
+							nimsuggestPath = "~/.nimble/bin/nimsuggest",
+						},
+					},
+				},
+				astro = {},
+				prismals = {
+					cmd = { "prisma-language-server", "--stdio" },
+					filetypes = {
+						"prisma",
+					},
+				},
+				cmake = {},
+				wasm_language_tools = {},
+			}
+
+			local blink = require("blink.cmp")
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, blink.get_lsp_capabilities())
+
+			for server, config in pairs(servers) do
+				config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+				vim.lsp.config(server, config)
+				vim.lsp.enable(server)
+			end
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()

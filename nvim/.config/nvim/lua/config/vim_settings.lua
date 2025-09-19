@@ -6,9 +6,9 @@ vim.cmd("set mouse=a")
 vim.cmd("set nohlsearch")
 vim.cmd("set clipboard=unnamedplus")
 vim.opt.expandtab = true
-vim.opt["tabstop"] = 4
-vim.opt["shiftwidth"] = 4
-vim.opt["softtabstop"] = 4
+vim.opt["tabstop"] = 2
+vim.opt["shiftwidth"] = 2
+vim.opt["softtabstop"] = 2
 vim.o.statusline = "%f"
 vim.opt.smartindent = true
 vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
@@ -29,7 +29,7 @@ vim.filetype.add({
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = {
-		spacing = 4,
+		spacing = 2,
 		prefix = "",
 	},
 	update_in_insert = true,
