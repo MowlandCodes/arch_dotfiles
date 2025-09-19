@@ -21,6 +21,7 @@ return {
 				["<CR>"] = { "accept", "fallback" },
 				["<Tab>"] = { "accept", "fallback" },
 				["<C-e>"] = { "cancel", "fallback" },
+				["<C-x>"] = { "show" },
 			},
 
 			appearance = {
