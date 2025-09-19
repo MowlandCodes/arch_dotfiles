@@ -47,6 +47,14 @@ return {
 			{ "antosha417/nvim-lsp-file-operations", config = true },
 		},
 
+		opts = {
+			keymap = {
+				preset = "default",
+				["<CR>"] = { "accept", "fallback" },
+			},
+			completion = { documentation = { auto_show = true } },
+		},
+
 		config = function()
 			local servers = {
 				lua_ls = {
@@ -146,6 +154,11 @@ return {
 			vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, { silent = true, desc = "LSP Code Action" })
 			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { silent = true, desc = "LSP Code Reference" })
 			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { silent = true, desc = "LSP Code Definition" })
+			vim.keymap.set("n", "<leader>lD", function()
+				vim.diagnostic.open_float({
+					border = "rounded",
+				})
+			end, { silent = true, desc = "LSP Code Definition" })
 		end,
 	},
 }
