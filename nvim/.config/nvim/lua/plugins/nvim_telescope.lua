@@ -16,6 +16,9 @@ return {
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope - Find Files" })
 			vim.keymap.set("n", "<leader>lg", builtin.live_grep, { desc = "Telescope - Live Greps" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope - Buffers" })
+			vim.keymap.set("n", "<leader>fi", function()
+				require("telescope").extensions.fidget.fidget()
+			end, { desc = "Telescope - Fidget" })
 		end,
 	},
 	{
@@ -42,10 +45,14 @@ return {
 							enabled = true,
 						},
 					},
+					fidget = {
+						enabled = true,
+					},
 				},
 			})
 			require("telescope").load_extension("ui-select")
 			require("telescope").load_extension("cmdline")
+			require("telescope").load_extension("fidget")
 		end,
 	},
 }

@@ -158,7 +158,7 @@ return {
 				vim.diagnostic.open_float({
 					border = "rounded",
 				})
-			end, { silent = true, desc = "LSP Code Definition" })
+			end, { silent = true, desc = "LSP Diagnostics" })
 		end,
 	},
 }

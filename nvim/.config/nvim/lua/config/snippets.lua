@@ -7,9 +7,9 @@ local rep = extras.rep
 local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("php", {
-    snip("php", {
-        txt('<?php '),
-        ins(1),
-        txt(" ?>")
-    })
+	snip("php", {
+		txt("<?php "),
+		ins(1),
+		txt(" ?>"),
+	}),
 })

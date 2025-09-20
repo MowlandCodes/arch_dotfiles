@@ -1,23 +1,73 @@
 -- Basic Configuration of NeoVim
-vim.cmd("set number")
-vim.cmd("set relativenumber")
-vim.cmd("set autoindent")
-vim.cmd("set mouse=a")
-vim.cmd("set nohlsearch")
-vim.cmd("set clipboard=unnamedplus")
-vim.cmd("set noswapfile")
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.mouse = "a"
+vim.opt.cursorline = true
+
+-- Search Settings
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+
+-- Indentation Settings
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
-vim.opt["tabstop"] = 2
-vim.opt["shiftwidth"] = 2
-vim.opt["softtabstop"] = 2
-vim.o.statusline = "%f"
+vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.wrap = true
+
+-- Visual Settings
+vim.opt.winblend = 0
+vim.opt.termguicolors = true
+vim.opt.cmdheight = 1
+
+-- Scroll Settings
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
+
+-- File Settings
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+vim.opt.updatetime = 300
+vim.opt.autoread = true
+vim.opt.autowrite = true
+
+-- Behaviour settings
+vim.opt.clipboard = "unnamedplus"
+vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.autochdir = false
+vim.opt.path:append("**")
+vim.opt.iskeyword:append("-")
+vim.opt.selection = "exclusive"
+
+-- Move lines up/down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Better indenting in visual mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+-- Create undo directory if it doesn't exist
+local undodir = vim.fn.stdpath("data") .. "/undo"
+if vim.fn.isdirectory(undodir) == 0 then
+	vim.fn.mkdir(undodir, "p")
+end
+
+vim.o.statusline = "%f"
 vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
 	.. "i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
 	.. "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
 	.. "o:hor50"
 
-vim.opt.wrap = true
 vim.g.lazyvim_php_lsp = "intelephense"
 
 vim.filetype.add({
