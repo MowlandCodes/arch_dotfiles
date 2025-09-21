@@ -1,6 +1,8 @@
 return {
 	{
 		"L3MON4D3/LuaSnip",
+		version = "2.*",
+		build = "make install_jsregexp",
 	},
 	{
 		"saghen/blink.cmp",
@@ -35,6 +37,7 @@ return {
 				},
 				default = { "lsp", "path", "snippets", "buffer", "codeium" },
 			},
+			snippets = { preset = "luasnip" },
 
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
