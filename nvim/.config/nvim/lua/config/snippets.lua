@@ -22,7 +22,7 @@ ls.add_snippets("javascript", {
 		ins(1),
 		txt({ "", " */" }),
 	}),
-	snip("t", {
+	snip("t1", {
 		txt({ "/** " }),
 		ins(1),
 		txt({ " */" }),
