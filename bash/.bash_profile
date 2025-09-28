@@ -6,3 +6,7 @@ if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
     fi
 fi
 . "$HOME/.cargo/env"
+
+export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
+
+export PATH="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:$PATH"

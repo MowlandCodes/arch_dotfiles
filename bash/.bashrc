@@ -117,3 +117,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
+
+export PATH="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:$PATH"
