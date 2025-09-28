@@ -84,7 +84,8 @@ alias cd="z"
 alias lz="lazygit"
 alias m_dup="xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1"
 alias m_ext="xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1"
-alias dev_esp=". $HOME/Documents/@PRIVACY/@MY_CODE/IoT/esp-idf/export.sh"
+alias cat="bat --theme=OneHalfDark"
+# alias dev_esp=". $HOME/Documents/@PRIVACY/@MY_CODE/IoT/esp-idf/export.sh"
 
 # Terminal Prompt
 PS1='[\u@\h \W]\$ '
