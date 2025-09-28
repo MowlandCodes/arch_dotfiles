@@ -74,11 +74,7 @@ return {
 					},
 				},
 				ast_grep = {},
-				clangd = {
-					init_options = {
-						fallbackFlags = { "-std=c89" },
-					},
-				},
+				clangd = {},
 				jq_lsp = {},
 				cssls = {},
 				html = {},
