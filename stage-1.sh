@@ -2,7 +2,7 @@
 
 # Installing all necessary packages for my system
 
-### For output coloring ###
+### For output coloring ##
 FAIL="\x1b[31;1m"
 SUCCESS="\x1b[32;1m"
 INFO="\x1b[36;1m"
