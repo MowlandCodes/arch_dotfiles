@@ -496,9 +496,9 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
     {
-        [DEFAULT_TAGS]        = {" ", " ", " ", " ", " "},
-        [ALTERNATIVE_TAGS]    = {"A",    "B",    "C",    "D",    "E"   },
-        [ALT_TAGS_DECORATION] = {"<1>",  "<2>",  "<3>",  "<4>",  "<5>" },
+        [DEFAULT_TAGS]        = {" ", " ", " ", " ", " ", " "},
+        [ALTERNATIVE_TAGS]    = {"A",    "B",    "C",    "D",    "E",    "F"   },
+        [ALT_TAGS_DECORATION] = {"<1>",  "<2>",  "<3>",  "<4>",  "<5>",  "<6>" },
 };
 
 #if BAR_TAGGRID_PATCH
