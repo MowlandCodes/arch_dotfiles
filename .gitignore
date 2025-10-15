@@ -6,3 +6,5 @@ statusbar/.local/state
 ranger/**/__pycache__
 suckless/suckless/dwm/config.h
 statusbar/.local/bin/pyfiglet
+statusbar/.local/bin/dotenv
+statusbar/.local/bin/netaddr
