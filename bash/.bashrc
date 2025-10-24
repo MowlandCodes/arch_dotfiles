@@ -49,6 +49,7 @@ function toggle_picom() {
 function mk_c() {
     PROJECTDIR="${PWD}/$1";
     CMAKELIST_FILE="${HOME}/.dotfiles/misc/CMakeLists.txt"
+    CLANG_FORMAT_FILE="${HOME}/.dotfiles/misc/.clang-format"
 
     echo "[*] Creating project directory: ${PROJECTDIR}"
     mkdir -p "${PROJECTDIR}"
@@ -57,7 +58,8 @@ function mk_c() {
     cp "$CMAKELIST_FILE" "$PROJECTDIR/CMakeLists.txt"
 
     echo "[*] Project directory created successfully"
-    clang-format --dump-config -style Microsoft > "$PROJECTDIR/.clang-format"
+
+    cp "$CLANG_FORMAT_FILE" "$PROJECTDIR/.clang-format"
     echo "[*] Clang-format config created successfully"
     echo "[*] Changing to project directory: ${PROJECTDIR}"
     cd "$PROJECTDIR" || exit
