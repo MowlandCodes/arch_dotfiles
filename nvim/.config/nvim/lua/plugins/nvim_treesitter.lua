@@ -16,7 +16,7 @@ return {
 
 		configs.setup({
 			auto_install = true,
-			highlight = { enable = true },
+			highlight = { enable = true, disable = { "latex" } },
 			indent = {
 				enable = true,
 				-- disable = { "lua" }, -- Only for Neovim version under 0.10.x

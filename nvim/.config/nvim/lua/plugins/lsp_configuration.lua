@@ -80,7 +80,6 @@ return {
 				html = {},
 				bashls = {},
 				biome = {},
-				ltex = {},
 				pyright = {},
 				phpactor = {},
 				intelephense = {},
@@ -134,6 +133,7 @@ return {
 				},
 				cmake = {},
 				wasm_language_tools = {},
+				texlab = {},
 			}
 
 			local blink = require("blink.cmp")
