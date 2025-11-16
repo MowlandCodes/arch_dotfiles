@@ -124,7 +124,7 @@ esac
 
 export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
 
-export PATH="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:$PATH"
+export PATH="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH"
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
 #
