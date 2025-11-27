@@ -134,6 +134,7 @@ return {
 				cmake = {},
 				wasm_language_tools = {},
 				texlab = {},
+				laravel_lsp = {},
 			}
 
 			local blink = require("blink.cmp")
