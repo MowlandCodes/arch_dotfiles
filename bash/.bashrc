@@ -123,7 +123,7 @@ esac
 
 export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
 
-export PATH="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH"
+export PATH=/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH:/opt/openresty/bin
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
 #
