@@ -135,6 +135,7 @@ return {
 				wasm_language_tools = {},
 				texlab = {},
 				laravel_lsp = {},
+				gopls = {},
 			}
 
 			local blink = require("blink.cmp")
