@@ -9,7 +9,7 @@ return {
 				cpp = { "clang-format" },
 				c = { "clang-format" },
 				php = { "pint", "pretty_php" },
-				html = { "prettier", stop_after_first = true },
+				html = {},
 				javascript = { "prettier", stop_after_first = true },
 				javascriptreact = { "prettier", stop_after_first = true },
 				typescript = { "prettier", stop_after_first = true },

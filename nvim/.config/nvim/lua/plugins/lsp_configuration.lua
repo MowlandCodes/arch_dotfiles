@@ -77,7 +77,18 @@ return {
 				clangd = {},
 				jq_lsp = {},
 				cssls = {},
-				html = {},
+				html = {
+					settings = {
+						html = {
+							formatter = {
+								enabled = false,
+							},
+							completion = {
+								autoTrigger = "always",
+							},
+						},
+					},
+				},
 				bashls = {},
 				biome = {},
 				pyright = {},
