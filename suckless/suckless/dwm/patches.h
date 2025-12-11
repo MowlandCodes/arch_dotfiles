@@ -19,7 +19,7 @@
  * bar. Awesomebar takes precedence over fancybar.
  * https://dwm.suckless.org/patches/awesomebar/
  */
-#define BAR_AWESOMEBAR_PATCH 0
+#define BAR_AWESOMEBAR_PATCH 1
 
 /* This patch depends on statuscmd patch and adds integration with a (patched)
  * dwmblocks instance to give a clickable status bar. One must not necessarily
@@ -236,7 +236,7 @@
  * you need it.
  */
 #define BAR_TITLE_RIGHT_PAD_PATCH 0
-#define BAR_TITLE_LEFT_PAD_PATCH 0
+#define BAR_TITLE_LEFT_PAD_PATCH  0
 
 /**
  * Bar options
@@ -456,8 +456,7 @@
  * that if using flexipatch-finalizer this must be explicitly enabled.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-barmodules-wintitleactions-6.2.diff
  */
-#define BAR_WINTITLEACTIONS_PATCH \
-    BAR_AWESOMEBAR_PATCH || BAR_TABGROUPS_PATCH || BAR_FLEXWINTITLE_PATCH
+#define BAR_WINTITLEACTIONS_PATCH BAR_AWESOMEBAR_PATCH || BAR_TABGROUPS_PATCH || BAR_FLEXWINTITLE_PATCH
 
 /***
  * Other patches
@@ -466,7 +465,7 @@
 /* Adds a window task switcher toggled using alt-tab.
  * https://dwm.suckless.org/patches/alt-tab/
  */
-#define ALT_TAB_PATCH 0
+#define ALT_TAB_PATCH 1
 
 /* All floating windows are centered, like the center patch, but without a rule.
  * The center patch takes precedence over this patch.

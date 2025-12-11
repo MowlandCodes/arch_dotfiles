@@ -232,10 +232,10 @@ static char tagsselbgcolor[]     = "#C6A0F6";
 static char tagsselbordercolor[] = "#C6B9F6";
 static char tagsselfloatcolor[]  = "#C6B9F6";
 
-static char hidnormfgcolor[] = "#005577";
-static char hidselfgcolor[]  = "#227799";
-static char hidnormbgcolor[] = "#222222";
-static char hidselbgcolor[]  = "#222222";
+static char hidnormfgcolor[] = "#aaaaaa";
+static char hidselfgcolor[]  = "#eeeeee";
+static char hidnormbgcolor[] = "#1b1b29";
+static char hidselbgcolor[]  = "#664C67";
 
 static char urgfgcolor[]     = "#bbbbbb";
 static char urgbgcolor[]     = "#222222";
@@ -1237,8 +1237,8 @@ static const Key keys[] = {
     {MODKEY | Mod4Mask | ShiftMask,    XK_Right,                 shiftswaptags,          {.i = +1}                                                                     },
 #endif  // SHIFTSWAPTAGS_PATCH
 #if BAR_WINTITLEACTIONS_PATCH
-    {MODKEY | ControlMask,             XK_z,                     showhideclient,         {0}                                                                           },
-    {MODKEY | ControlMask,             XK_s,                     unhideall,              {0}                                                                           },
+    {MODKEY | ShiftMask,               XK_z,                     showhideclient,         {0}                                                                           },
+    {MODKEY | ShiftMask,               XK_s,                     unhideall,              {0}                                                                           },
 #endif  // BAR_WINTITLEACTIONS_PATCH
     {MODKEY | ShiftMask,               XK_c,                     killclient,             {0}                                                                           },
 #if KILLUNSEL_PATCH
