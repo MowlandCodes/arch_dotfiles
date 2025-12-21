@@ -74,6 +74,7 @@ return {
 					},
 				},
 				ast_grep = {},
+				rust_analyzer = {},
 				clangd = {},
 				jq_lsp = {},
 				cssls = {},
@@ -168,6 +169,9 @@ return {
 			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { silent = true, desc = "LSP Code Reference" })
 			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { silent = true, desc = "LSP Code Definition" })
 			vim.keymap.set("n", "<leader>lD", function()
+				vim.diagnostic.open_float({
+					border = "rounded",
+				})
 				vim.diagnostic.open_float({
 					border = "rounded",
 				})
