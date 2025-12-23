@@ -73,6 +73,7 @@ return {
 						},
 					},
 				},
+				terraformls = {},
 				ast_grep = {},
 				rust_analyzer = {},
 				clangd = {},
@@ -123,6 +124,8 @@ return {
 						"php",
 						"blade",
 						"htmldjango",
+						"typescriptreact",
+						"javascriptreact",
 					},
 				},
 				powershell_es = {
