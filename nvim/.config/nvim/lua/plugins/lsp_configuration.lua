@@ -77,10 +77,11 @@ return {
 				jq_lsp = {},
 				cssls = {},
 				html = {
+					filetypes = { "html", "typescriptreact", "blade" },
 					settings = {
 						html = {
 							formatter = {
-								enabled = false,
+								enabled = true,
 							},
 							completion = {
 								autoTrigger = "always",
