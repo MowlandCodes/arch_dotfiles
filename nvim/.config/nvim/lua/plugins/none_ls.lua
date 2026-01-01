@@ -67,6 +67,7 @@ return {
 								filter = function(c)
 									return c.name == "null-ls"
 								end,
+								bufnr = bufnr,
 							})
 						end,
 						desc = "[lsp] format on save",
