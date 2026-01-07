@@ -194,7 +194,7 @@ static void (*bartabmonfns[])(Monitor *) = {NULL /* , customlayoutfn */};
 #if BAR_PANGO_PATCH
 static const char font[] = "monospace 10";
 #else
-static const char *fonts[] = {"JetBrainsMono Nerd Font:pixelsize=15:style=bold",
+static const char *fonts[] = {"JetBrainsMono Nerd Font Propo:pixelsize=15:style=bold",
                               "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true:style=bold",
                               "monospace:pixelsize=15:style=bold"};
 #endif // BAR_PANGO_PATCH
@@ -496,9 +496,9 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
     {
-        [DEFAULT_TAGS]        = {" ", " ", " ", " ", " ", " "},
-        [ALTERNATIVE_TAGS]    = {"A",    "B",    "C",    "D",    "E",    "F"   },
-        [ALT_TAGS_DECORATION] = {"<1>",  "<2>",  "<3>",  "<4>",  "<5>",  "<6>" },
+        [DEFAULT_TAGS]        = {"", "", "", "", "", ""},
+        [ALTERNATIVE_TAGS]    = {"A",   "B",   "C",   "D",   "E",   "F"  },
+        [ALT_TAGS_DECORATION] = {"<1>", "<2>", "<3>", "<4>", "<5>", "<6>"},
 };
 
 #if BAR_TAGGRID_PATCH
