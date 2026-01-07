@@ -66,6 +66,24 @@ function mk_c() {
     mkdir -p "${PROJECTDIR}/src" "${PROJECTDIR}/includes" "${PROJECTDIR}/build"
 }
 
+function to_webp(){
+  if [[ -z "$1" ]]; then
+    echo "Usage: to_webp <file>"
+    return 1
+  fi
+
+  for file in "$@"; do
+    filename="${file%.*}"
+
+    if [[ -f "$file" ]]; then
+      echo "Converting $file to webp..."
+      ffmpeg -i "$file" -c:v libwebp -vf "scale=1920:-1" -quality 65 "${filename}.webp" -hide_banner -loglevel error
+    else
+      echo "$file is not a file"
+    fi
+  done
+}
+
 # Options
 set -o vi
 
@@ -168,3 +186,8 @@ elif type compctl &>/dev/null; then
   compctl -K _pm2_completion + -f + pm2
 fi
 ###-end-pm2-completion-###
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
