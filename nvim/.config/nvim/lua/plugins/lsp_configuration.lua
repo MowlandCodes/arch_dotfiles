@@ -124,6 +124,7 @@ return {
 						"htmldjango",
 						"typescriptreact",
 						"javascriptreact",
+						"css",
 					},
 				},
 				powershell_es = {
