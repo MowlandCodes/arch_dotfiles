@@ -106,6 +106,7 @@ alias m_dup="xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1"
 alias m_ext="xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1"
 alias cat="bat --theme=OneHalfDark"
 alias dev_esp=". $HOME/esp/esp-idf/export.sh"
+alias venv="source .venv/bin/activate"
 
 # Terminal Prompt
 PS1='[\u@\h \W]\$ '
@@ -141,7 +142,7 @@ esac
 
 export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
 
-export PATH=/home/mowlandcodes/.phpenv/bin:/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH:/opt/openresty/bin
+export PATH=/home/mowlandcodes/.phpenv/bin:/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH:/opt/openresty/bin:/home/mowlandcodes/pear/bin
 
 # PHPenv Initial
 eval "$(phpenv init -)"
