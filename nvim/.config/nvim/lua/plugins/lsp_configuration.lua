@@ -77,7 +77,15 @@ return {
 				jq_lsp = {},
 				cssls = {},
 				html = {
-					filetypes = { "html", "typescriptreact", "typescript", "javascript", "javascriptreact", "blade" },
+					filetypes = {
+						"html",
+						"typescriptreact",
+						"typescript",
+						"javascript",
+						"javascriptreact",
+						"blade",
+						"php",
+					},
 					settings = {
 						html = {
 							formatter = {
