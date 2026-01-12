@@ -2,6 +2,7 @@ return {
 	"nvimtools/none-ls.nvim",
 	dependencies = {
 		"MunifTanjim/prettier.nvim",
+		"gbprod/none-ls-ecs.nvim",
 	},
 	config = function()
 		local null_ls = require("null-ls")
@@ -82,6 +83,7 @@ return {
 			end,
 
 			sources = {
+				require("none-ls-ecs.formatting"),
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
@@ -89,7 +91,7 @@ return {
 				null_ls.builtins.formatting.markdownlint,
 				null_ls.builtins.formatting.prettier.with({ extra_filetypes = { "ejs" } }),
 				null_ls.builtins.formatting.clang_format,
-				null_ls.builtins.formatting.pretty_php,
+				null_ls.builtins.formatting.pretty_php.with({ extra_args = { "--standard=PSR12" } }),
 				null_ls.builtins.diagnostics.djlint,
 				null_ls.builtins.diagnostics.phpcs,
 				null_ls.builtins.formatting.blade_formatter,

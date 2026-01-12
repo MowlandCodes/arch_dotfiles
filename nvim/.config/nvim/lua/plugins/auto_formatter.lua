@@ -8,7 +8,7 @@ return {
 				python = { "black", "isort" },
 				cpp = { "clang-format" },
 				c = { "clang-format" },
-				php = { "pint", "pretty_php" },
+				php = { "pretty_php" },
 				html = {},
 				javascript = { "prettier", stop_after_first = true },
 				javascriptreact = { "prettier", stop_after_first = true },
