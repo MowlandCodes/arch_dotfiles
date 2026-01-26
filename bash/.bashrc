@@ -89,7 +89,7 @@ set -o vi
 
 # Aliases
 alias ls='eza --icons --group-directories-first'
-alias ll='eza --icons --group-directories-first -lh --all'
+alias ll='eza --icons --group-directories-first -lh -g --all'
 alias lr='ranger'
 alias grep='grep --color=auto'
 alias conf_dwm='cd ${HOME}/suckless/dwm; nvim; make_dwm; cd -'
