@@ -12,40 +12,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# Functions
-function reset_dwmblocks(){
-    pid_dwmblocks=$(pidof dwmblocks)
-
-    if [[ "$pid_dwmblocks" != "" ]]; then
-        echo "Resetting dwmblocks..."
-        killall dwmblocks
-        (dwmblocks &) 2>/dev/null
-    else
-        echo "dwmblocks is not running"
-        echo "Starting dwmblocks..."
-        (dwmblocks &) 2> /dev/null
-        if [[ "$(pidof dwmblocks)" != "" ]]; then
-            echo "[*] dwmblocks started successfully"
-        fi
-    fi
-}
-
-function toggle_picom() {
-    if [[ -z "$(pidof picom)" ]]; then
-        echo "[*] Enabling Picom..."
-        (picom &)>/dev/null
-        if [[ "$(pidof picom)" != "" ]]; then 
-            echo "[*] Picom started successfully"
-        else
-            echo "[!] Picom failed to start"
-        fi
-    else
-        echo "[*] Disabling Picom..."
-        killall picom
-        echo "[*] Picom stopped successfully"
-    fi
-}
-
 function mk_c() {
     PROJECTDIR="${PWD}/$1";
     CMAKELIST_FILE="${HOME}/.dotfiles/misc/CMakeLists.txt"
@@ -102,8 +68,6 @@ alias make_dwmblocks='cd ${HOME}/suckless/dwmblocks; sudo make clean install; cd
 alias reset_dwmblocks='reset_dwmblocks'
 alias cd="z"
 alias lz="lazygit"
-alias m_dup="xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1"
-alias m_ext="xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1"
 alias cat="bat --theme=OneHalfDark"
 alias dev_esp=". $HOME/esp/esp-idf/export.sh"
 alias venv="source .venv/bin/activate"
