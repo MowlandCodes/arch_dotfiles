@@ -7,7 +7,7 @@
   "gtk-layer-shell": true,
   "height": 45,
   "modules-left": ["custom/launch_rofi", "hyprland/workspaces"],
-  "modules-center": ["tray"],
+  "modules-center": ["custom/notify_center", "tray"],
   "modules-right": [
     "custom/sysmon",
     "pulseaudio",
@@ -29,7 +29,7 @@
     "format-icons": {
       "active": "",
       "persistent": "",
-      "default": ""
+      "default": ""
     },
     "sort-by-number": true
   },
@@ -146,5 +146,26 @@
     "format": " ",
     "on-click": "$HOME/.config/rofi/scripts/launcher_t1",
     "tooltip": false
+  },
+
+  "custom/notify_center": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

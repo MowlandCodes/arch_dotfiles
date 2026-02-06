@@ -26,6 +26,7 @@ tooltip {
   color: #b4befe;
   margin-right: 5px;
   transition: all ease-in-out;
+  transition-duration: 0.2s;
 }
 
 #workspaces button.active {
@@ -60,6 +61,7 @@ tooltip {
 #network,
 #bluetooth,
 #custom-sysmon,
+#custom-notify_center,
 #temperature,
 #workspaces,
 #tray,
@@ -90,8 +92,14 @@ tooltip {
 }
 
 #tray {
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
   margin-right: 15px;
+}
+
+#custom-notify_center {
+  color: #eba0ac;
+  padding: 0 15px;
+  border-radius: 10px 0 0 10px;
 }
 
 #workspaces {
@@ -110,7 +118,7 @@ tooltip {
 }
 
 #custom-sysmon {
-  color: #89b4fa;
+  color: #cba6f7;
   border-left: 0px;
   border-right: 0px;
   border-radius: 15px 0px 0px 15px;
