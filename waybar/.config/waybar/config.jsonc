@@ -138,7 +138,7 @@
     "return-type": "json",
     "interval": 5,
     "format": "{}",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty --class floating_btop -e btop",
     "tooltip": true
   },
 
