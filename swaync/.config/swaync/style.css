@@ -33,6 +33,7 @@
   border: 2px solid @blue;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
   padding: 14px;
+  min-height: 250px;
 }
 
 .widget-title {
@@ -40,7 +41,7 @@
   background: @mantle;
   padding: 5px 10px;
   margin: 10px 10px 5px 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 12px;
 }
 
@@ -123,6 +124,8 @@
 /* List container juga harus bersih */
 .notification-list {
   background: transparent;
+  padding: 4px;
+  margin-bottom: 5px;
 }
 
 .notification-group {
@@ -160,7 +163,6 @@
 
 .notification-default-action:hover,
 .notification-action:hover {
-  -gtk-icon-effect: none;
   background: @surface0;
 }
 
