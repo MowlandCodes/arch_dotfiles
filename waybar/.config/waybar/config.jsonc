@@ -143,7 +143,7 @@
   },
 
   "custom/launch_rofi": {
-    "format": " ",
+    "format": "",
     "on-click": "$HOME/.config/rofi/scripts/launcher_t1",
     "tooltip": false
   },
