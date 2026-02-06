@@ -1,0 +1,202 @@
+@define-color base #24273a;
+@define-color mantle #1e2030;
+@define-color crust #181926;
+@define-color text #cad3f5;
+@define-color subtext0 #a5adcb;
+@define-color subtext1 #b8c0e0;
+@define-color surface0 #363a4f;
+@define-color surface1 #494d64;
+@define-color overlay0 #6e738d;
+@define-color blue #8aadf4;
+@define-color lavender #b7bdf8;
+@define-color sapphire #7dc4e4;
+@define-color sky #91d7e3;
+@define-color teal #8bd5ca;
+@define-color green #a6da95;
+@define-color yellow #eed49f;
+@define-color peach #f5a97f;
+@define-color maroon #ee99a0;
+@define-color red #ed8796;
+@define-color mauve #c6a0f6;
+@define-color pink #f5bde6;
+@define-color flamingo #f0c6c6;
+@define-color rosewater #f4dbd6;
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-weight: bold;
+}
+
+.control-center {
+  background: alpha(@base, 0.85);
+  border-radius: 18px;
+  border: 2px solid @blue;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
+  padding: 14px;
+}
+
+.widget-title {
+  color: @blue;
+  background: @mantle;
+  padding: 5px 10px;
+  margin: 10px 10px 5px 10px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+}
+
+.widget-title > button {
+  font-size: 1rem;
+  color: @text;
+  text-shadow: none;
+  background: @surface0;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.widget-title > button:hover {
+  background: @red;
+  color: @base;
+}
+
+.widget-dnd {
+  background: @mantle;
+  padding: 5px 10px;
+  margin: 5px 10px 10px 10px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: @subtext1;
+}
+
+.widget-dnd > switch {
+  background: @surface0;
+  border-radius: 10px;
+}
+
+.widget-dnd > switch:checked {
+  background: @blue;
+}
+
+.widget-dnd > switch slider {
+  background: @subtext0;
+  border-radius: 10px;
+}
+
+.widget-dnd > label {
+  font-size: 1.1rem;
+}
+
+.widget-mpris {
+  color: @text;
+  background: @mantle;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+}
+
+.widget-mpris > button {
+  border-radius: 10px;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.widget-mpris-subtitle {
+  font-size: 1rem;
+}
+
+.notification-row {
+  outline: none;
+  background: transparent;
+  margin: 5px 0;
+  /* Kasih jarak antar notif vertical */
+  padding: 0;
+}
+
+/* Kalo di-hover atau di-focus jangan berubah warna background row-nya */
+.notification-row:focus,
+.notification-row:hover {
+  background: transparent;
+}
+
+/* List container juga harus bersih */
+.notification-list {
+  background: transparent;
+}
+
+.notification-group {
+  background: transparent;
+}
+
+.notification-group-header {
+  background: transparent;
+  color: @subtext0;
+  margin: 5px 10px;
+}
+
+.notification {
+  background: alpha(@base, 0.8);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid @surface0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.notification:hover {
+  background: @surface0;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  color: @text;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: @surface0;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.summary {
+  font-size: 1rem;
+  font-weight: bold;
+  color: @blue;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: @subtext0;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: @text;
+  text-shadow: none;
+}
+
+.notification.critical {
+  border: 2px solid @red;
+  background: alpha(@mantle, 0.9);
+}
+
+.notification.low {
+  border: 1px solid @green;
+}
