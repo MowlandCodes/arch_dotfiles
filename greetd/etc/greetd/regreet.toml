@@ -1,0 +1,14 @@
+[commands]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]
+
+[background]
+path = "/usr/share/backgrounds/lockscreen_blurred.jpg"
+fit = "Cover"
+
+[GTK]
+application_prefer_dark_theme = true
+theme_name = "catppuccin-macchiato-lavender-standard+default"
+cursor_theme_name = "Catppuccin Macchiato Lavender"
+
+font_name = "JetBrainsMono Nerd Font Propo 14"
