@@ -9,6 +9,7 @@
   "modules-left": ["custom/launch_rofi", "hyprland/workspaces"],
   "modules-center": ["custom/notify_center", "tray"],
   "modules-right": [
+    "temperature",
     "custom/sysmon",
     "pulseaudio",
     "backlight",
@@ -53,6 +54,15 @@
         "today": "<span color='#F38BA8'><b>{}</b></span>"
       }
     }
+  },
+
+  "temperature": {
+    "thermal-zone": 6,
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", ""],
+    "tooltip-format": "CPU Temperature: {temperatureC}°C"
   },
 
   "backlight": {
@@ -104,13 +114,6 @@
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
     "scroll-step": 5
-  },
-
-  "temperature": {
-    "thermal-zone": 1,
-    "format": "{temperatureF}°F ",
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C "
   },
 
   "network": {
