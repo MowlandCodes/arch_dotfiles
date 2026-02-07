@@ -57,7 +57,7 @@
   },
 
   "temperature": {
-    "thermal-zone": 6,
+    "thermal-zone": 6, // My CPU Thermal Zone
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
     "critical-threshold": 80,
     "format": "{temperatureC}°C {icon}",
