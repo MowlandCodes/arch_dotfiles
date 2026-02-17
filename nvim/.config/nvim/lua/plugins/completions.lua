@@ -19,8 +19,14 @@ return {
 		---@type blink.cmp.Config
 		opts = {
 			keymap = {
-				["<CR>"] = { "accept", "fallback" },
-				["<C-e>"] = { "cancel", "fallback" },
+				preset = "default",
+				["<Up>"] = { "select_prev", "fallback" },
+				["<Down>"] = { "select_next", "fallback" },
+				["<C-p>"] = false,
+				["<C-n>"] = false,
+				["<C-CR>"] = { "select_and_accept", "fallback" },
+				["<Tab>"] = { "select_and_accept", "fallback_to_mappings" },
+				["<C-e>"] = { "cancel" },
 				["<C-x>"] = { "show" },
 			},
 
