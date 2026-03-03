@@ -1,0 +1,7 @@
+{
+  "Docstring": {
+    "prefix": "ds",
+    "body": ["'''", "$1", "'''"],
+    "description": "Create a Docstring"
+  }
+}
