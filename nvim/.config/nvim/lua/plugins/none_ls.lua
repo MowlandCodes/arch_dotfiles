@@ -37,7 +37,7 @@ return {
 				end_of_line = "lf",
 				html_whitespace_sensitivity = "css",
 				jsx_single_quote = false,
-				print_width = 80,
+				print_width = 120,
 				prose_wrap = "preserve",
 				quote_props = "as-needed",
 				semi = true,
