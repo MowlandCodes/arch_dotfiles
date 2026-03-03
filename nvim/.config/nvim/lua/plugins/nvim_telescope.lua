@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		version = "*",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"BurntSushi/ripgrep",
@@ -40,9 +40,6 @@ return {
 							complete = "<Tab>",
 							run_selection = "<C-CR>",
 							run_input = "<CR>",
-						},
-						overseer = {
-							enabled = true,
 						},
 					},
 					fidget = {
