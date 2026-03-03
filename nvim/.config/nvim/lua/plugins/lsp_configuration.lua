@@ -21,7 +21,6 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"jedi_language_server",
 					"clangd",
 					"cssls",
 					"html",
@@ -99,7 +98,6 @@ return {
 				},
 				bashls = {},
 				biome = {},
-				pyright = {},
 				phpactor = {},
 				intelephense = {},
 				ts_ls = {
@@ -158,6 +156,7 @@ return {
 				texlab = {},
 				laravel_lsp = {},
 				gopls = {},
+				pyright = {},
 			}
 
 			local blink = require("blink.cmp")
