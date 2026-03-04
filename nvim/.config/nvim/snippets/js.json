@@ -1,0 +1,12 @@
+{
+  "JSDoc Multiline": {
+    "prefix": "jd",
+    "body": ["/**", " * $1", " */"],
+    "description": "Create a Multiline JSDoc"
+  },
+  "JSDoc Single Line": {
+    "prefix": "jdl",
+    "body": ["/** $1 */"],
+    "description": "Create a Single Line JSDoc"
+  }
+}
