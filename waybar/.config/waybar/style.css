@@ -57,7 +57,7 @@ tooltip {
 #window,
 #clock,
 #battery,
-#pulseaudio,
+#wireplumber,
 #network,
 #bluetooth,
 #custom-sysmon,
@@ -164,19 +164,11 @@ tooltip {
   margin-right: 10px;
 }
 
-#pulseaudio {
+#wireplumber {
   color: #89b4fa;
   border-left: 0px;
   border-right: 0px;
   border-radius: 0px 0px 0px 0px;
-}
-
-#pulseaudio.microphone {
-  color: #cba6f7;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px 15px 15px 0px;
-  margin-right: 10px;
 }
 
 #battery {

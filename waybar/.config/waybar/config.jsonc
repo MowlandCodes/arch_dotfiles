@@ -11,7 +11,7 @@
   "modules-right": [
     "temperature",
     "custom/sysmon",
-    "pulseaudio",
+    "wireplumber",
     "backlight",
     "network",
     "battery",
@@ -87,32 +87,21 @@
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
 
-  "pulseaudio": {
+  "wireplumber": {
     "format": "{icon} {volume}%",
-    "tooltip": true,
     "format-muted": " Muted",
     "on-click": "pavucontrol",
-    "on-scroll-up": "pamixer -i 5",
-    "on-scroll-down": "pamixer -d 5",
+    "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
     "scroll-step": 5,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    }
+    "format-icons": ["", "", ""]
   },
 
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " Muted",
-    "on-click": "pamixer --default-source -t",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": "󰍬 {volume}%",
+    "format-muted": "󰍭",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "scroll-step": 5
   },
 
