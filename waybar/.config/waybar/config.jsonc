@@ -123,7 +123,7 @@
     "tooltip-format": "{essid} - {ifname} on {ipaddr}",
     "format-linked": "{ifname} (No IP)",
     "format-disconnected": "Disconnected ⚠",
-    "on-click": "nmcli d wifi rescan && kitty -e nmtui"
+    "on-click": "nmcli d wifi rescan && kitty --class floating_nmtui -e nmtui"
   },
 
   "bluetooth": {
