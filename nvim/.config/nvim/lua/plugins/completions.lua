@@ -43,14 +43,14 @@ return {
 			["<Tab>"] = { "snippet_forward", "fallback" },
 			["<S-Tab>"] = { "snippet_backward", "fallback" },
 
+			-- Explicit navigation map
 			["<Up>"] = { "select_prev", "fallback" },
 			["<Down>"] = { "select_next", "fallback" },
-			["<C-p>"] = {},
-			["<C-n>"] = {},
+			["<C-p>"] = { "select_prev", "fallback" },
+			["<C-n>"] = { "select_next", "fallback" },
 
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
-
 			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 		},
 		appearance = {
@@ -60,6 +60,7 @@ return {
 		completion = {
 			documentation = {
 				auto_show = true,
+				auto_show_delay_ms = 200,
 			},
 			list = {
 				selection = {
@@ -68,6 +69,7 @@ return {
 			},
 		},
 
+		signature = { enabled = true },
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 

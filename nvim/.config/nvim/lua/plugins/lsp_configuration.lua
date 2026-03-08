@@ -38,27 +38,19 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
 			"saghen/blink.cmp",
 			{ "antosha417/nvim-lsp-file-operations", config = true },
 		},
-
-		opts = {
-			keymap = {
-				preset = "default",
-				["<CR>"] = { "accept", "fallback" },
-			},
-			completion = { documentation = { auto_show = true } },
-		},
-
 		config = function()
+			local blink = require("blink.cmp")
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, blink.get_lsp_capabilities())
+
 			local servers = {
 				lua_ls = {
 					settings = {
 						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
+							diagnostics = { globals = { "vim" } },
 							workspace = {
 								library = {
 									[vim.fn.expand("$VIMRUNTIME/lua")] = true,
@@ -87,12 +79,8 @@ return {
 					},
 					settings = {
 						html = {
-							formatter = {
-								enabled = true,
-							},
-							completion = {
-								autoTrigger = "always",
-							},
+							formatter = { enabled = true },
+							completion = { autoTrigger = "always" },
 						},
 					},
 				},
@@ -101,12 +89,7 @@ return {
 				phpactor = {},
 				intelephense = {},
 				ts_ls = {
-					filetypes = {
-						"javascript",
-						"typescript",
-						"javascriptreact",
-						"typescriptreact",
-					},
+					filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
 				},
 				emmet_language_server = {
 					filetypes = {
@@ -123,33 +106,19 @@ return {
 					},
 				},
 				tailwindcss = {
-					filetypes = {
-						"html",
-						"php",
-						"blade",
-						"htmldjango",
-						"typescriptreact",
-						"javascriptreact",
-						"css",
-					},
+					filetypes = { "html", "php", "blade", "htmldjango", "typescriptreact", "javascriptreact", "css" },
 				},
 				powershell_es = {
 					bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
 					filetypes = "ps1",
 				},
 				nim_langserver = {
-					settings = {
-						nim = {
-							nimsuggestPath = "~/.nimble/bin/nimsuggest",
-						},
-					},
+					settings = { nim = { nimsuggestPath = "~/.nimble/bin/nimsuggest" } },
 				},
 				astro = {},
 				prismals = {
 					cmd = { "prisma-language-server", "--stdio" },
-					filetypes = {
-						"prisma",
-					},
+					filetypes = { "prisma" },
 				},
 				cmake = {},
 				wasm_language_tools = {},
@@ -158,10 +127,6 @@ return {
 				gopls = {},
 				pyright = {},
 			}
-
-			local blink = require("blink.cmp")
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, blink.get_lsp_capabilities())
 
 			for server, config in pairs(servers) do
 				config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
@@ -178,12 +143,7 @@ return {
 			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { silent = true, desc = "LSP Code Reference" })
 			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { silent = true, desc = "LSP Code Definition" })
 			vim.keymap.set("n", "<leader>lD", function()
-				vim.diagnostic.open_float({
-					border = "rounded",
-				})
-				vim.diagnostic.open_float({
-					border = "rounded",
-				})
+				vim.diagnostic.open_float({ border = "rounded" })
 			end, { silent = true, desc = "LSP Diagnostics" })
 		end,
 	},
