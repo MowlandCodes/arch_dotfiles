@@ -156,3 +156,5 @@ fi
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
+
+complete -C /usr/bin/terraform terraform
