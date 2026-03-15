@@ -12,7 +12,8 @@
       },
       {
         "language": [
-          "javascript"
+          "javascript",
+          "javascriptreact"
         ],
         "path": "./js.json"
       }
