@@ -14,8 +14,8 @@ export VISUAL="nvim"
 
 function mk_c() {
     PROJECTDIR="${PWD}/$1";
-    CMAKELIST_FILE="${HOME}/.dotfiles/misc/CMakeLists.txt"
-    CLANG_FORMAT_FILE="${HOME}/.dotfiles/misc/.clang-format"
+    CMAKELIST_FILE="${HOME}/arch_dotfiles/misc/CMakeLists.txt"
+    CLANG_FORMAT_FILE="${HOME}/arch_dotfiles/misc/.clang-format"
 
     echo "[*] Creating project directory: ${PROJECTDIR}"
     mkdir -p "${PROJECTDIR}"
