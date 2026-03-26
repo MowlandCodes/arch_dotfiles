@@ -1,0 +1,49 @@
+{
+  "React - Class Component": {
+    "prefix": ["cc", "rcc"],
+    "body": [
+      "import React from 'react';",
+      "\n",
+      "/**",
+      " * @class ${1:classname}",
+      " * @description ${2:description}",
+      " * @typedef {object} props",
+      " * @props {string} ${3:propname} - ${4:propdesc}",
+      " */",
+      "export default class ${1:classname} extends React.Component {",
+      "\tconstructor(props) {",
+      "\t\tsuper(props);",
+      "\t}",
+      "",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t${5:content}",
+      "\t\t\t</div>",
+      "\t\t);",
+      "\t}",
+      "}"
+    ],
+    "description": "Create a Class Component in React"
+  },
+
+  "React - Function Component": {
+    "prefix": ["fc", "rfc"],
+    "body": [
+      "/**",
+      " * @function ${1:funcname}",
+      " * @description ${2:description}",
+      " * @param {object} props",
+      " * @param {string} ${3:propname} - ${4:propdescription}",
+      " */",
+      "export default function ${1:funcname}(props) {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t${5:content}",
+      "\t\t</div>",
+      "\t);",
+      "}"
+    ],
+    "description": "Create a Function Component in React"
+  }
+}
