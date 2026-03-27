@@ -80,7 +80,7 @@ source $HOME/ble.sh/out/ble.sh
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 clear
-fastfetch
+fastfetch --config examples/13
 
 
 # Generated for pdtm. Do not edit.
