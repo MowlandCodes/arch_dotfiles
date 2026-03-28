@@ -58,7 +58,7 @@ tooltip {
 #clock,
 #battery,
 #wireplumber,
-#custom-wifi,
+#network,
 #bluetooth,
 #custom-sysmon,
 #custom-notify_center,
@@ -149,7 +149,7 @@ tooltip {
   border-right: 0px;
 }
 
-#custom-wifi {
+#network {
   color: #f9e2af;
   border-radius: 0px 15px 15px 0px;
   border-left: 0px;
