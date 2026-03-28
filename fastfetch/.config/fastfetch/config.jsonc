@@ -15,6 +15,7 @@
     "constants": ["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
   },
   "modules": [
+    "break",
     {
       "type": "custom",
       "format": " {##CBA6F7}  {##89b4fa}Arch Linux"
