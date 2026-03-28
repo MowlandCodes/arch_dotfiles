@@ -13,7 +13,7 @@ if [[ "$INTERFACE" == e* ]]; then
 fi
 
 if [[ "$INTERFACE" == w* ]]; then
-    DBM=$(iw dev "$INTERFACE" link | grep signal | awk '{print $2}')
+    DBM=$(iwctl station "$INTERFACE" show | grep -w "RSSI" | awk '{print $2}')
     
     if [ -z "$DBM" ]; then
         echo '{"text": "No Signal ⚠", "class": "disconnected"}'

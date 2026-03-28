@@ -115,7 +115,7 @@
   "custom/wifi": {
     "exec": "~/.config/waybar/scripts/wifi.sh",
     "return-type": "json",
-    "interval": 3,
+    "interval": 1,
     "format": "{text}",
     "tooltip": true,
     "on-click": "kitty --class floating_impala -e impala"
