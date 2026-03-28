@@ -8,15 +8,7 @@
   "height": 45,
   "modules-left": ["custom/launch_rofi", "hyprland/workspaces"],
   "modules-center": ["custom/notify_center", "tray"],
-  "modules-right": [
-    "temperature",
-    "custom/sysmon",
-    "wireplumber",
-    "backlight",
-    "network",
-    "battery",
-    "clock"
-  ],
+  "modules-right": ["temperature", "custom/sysmon", "wireplumber", "backlight", "custom/wifi", "battery", "clock"],
   "hyprland/window": {
     "format": "{}"
   },
@@ -105,14 +97,28 @@
     "scroll-step": 5
   },
 
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": " {signalStrength}%",
-    "format-ethernet": "󰈀 Connected",
-    "tooltip-format": "{essid} - {ifname} on {ipaddr}",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
-    "on-click": "nmcli d wifi rescan && kitty --class floating_nmtui -e nmtui"
+  // "network": {
+  //   // "interface": "wlp2*", // (Optional) To force the use of this interface
+  //   "format-wifi": " {signaldBm}%",
+  //   "format-ethernet": "󰈀 Connected",
+  //   "tooltip-format": "{essid} - {ifname} on {ipaddr}",
+  //   "format-linked": "{ifname} (No IP)",
+  //   "format-disconnected": "Disconnected ⚠",
+  //   // Set iwd as the default wireless backend in /etc/NetworkManager/NetworkManager.conf
+  //   // in order impala to work
+  //   // [device]
+  //   // wifi.backend=iwd
+  //
+  //   // PS : Don't forget to restart NetworkManager
+  //   "on-click": "kitty --class floating_impala -e impala"
+  // },
+  "custom/wifi": {
+    "exec": "~/.config/waybar/scripts/wifi.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{text}",
+    "tooltip": true,
+    "on-click": "kitty --class floating_impala -e impala"
   },
 
   "bluetooth": {
