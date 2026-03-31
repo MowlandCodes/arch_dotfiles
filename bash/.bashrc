@@ -66,7 +66,7 @@ alias make_dwm='cd ${HOME}/suckless/dwm; sudo cp config.def.h config.h; sudo cp 
 alias make_st='cd ${HOME}/suckless/st; sudo cp config.def.h config.h; sudo make clean install; cd -'
 alias make_dwmblocks='cd ${HOME}/suckless/dwmblocks; sudo make clean install; cd -'
 alias reset_dwmblocks='reset_dwmblocks'
-alias cd="z"
+# alias cd="z"
 alias lz="lazygit"
 alias cat="bat --theme=OneHalfDark"
 alias dev_esp=". $HOME/esp/esp-idf/export.sh"
@@ -158,3 +158,24 @@ fi
 eval "$(atuin init bash)"
 
 complete -C /usr/bin/terraform terraform
+
+[[ -s "/home/mowlandcodes/.gvm/scripts/gvm" ]] && source "/home/mowlandcodes/.gvm/scripts/gvm"
+
+# using zoxide
+unalias cd 2>/dev/null
+
+alias cd="z"
+# cd() {
+#     # 1. Pindah folder pake zoxide (biar frecency tetep ke-update)
+#     # Kita panggil command 'z' yang biasanya udah di-define zoxide
+#     z "$@" || return
+#     
+#     # 2. Panggil fungsi asli GVM yang nempel di 'cd' 
+#     # Karena GVM nge-override 'cd', kita panggil shell logic-nya secara manual
+#     # Kalau folder yang kita tuju ada .gvmrc, ini bakal otomatis switch
+#     if [ -s "$GVM_ROOT/scripts/gvm" ]; then
+#         # Kita panggil function gvm dengan argumen 'use' kalau perlu 
+#         # Atau biarkan GVM nge-hook otomatis lewat logic internalnya
+#         [[ -f .gvmrc ]] && gvm use < .gvmrc > /dev/null 2>&1
+#     fi
+# }
