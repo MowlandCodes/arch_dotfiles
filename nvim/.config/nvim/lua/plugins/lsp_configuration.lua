@@ -30,6 +30,7 @@ return {
 					"pyright",
 					"intelephense",
 					"ts_ls",
+					"texlab",
 				},
 				automatic_installation = true,
 			})
@@ -122,7 +123,9 @@ return {
 				},
 				cmake = {},
 				wasm_language_tools = {},
-				texlab = {},
+				texlab = {
+					filetypes = { "tex", "bib", "markdown" },
+				},
 				laravel_lsp = {},
 				gopls = {},
 				pyright = {},
