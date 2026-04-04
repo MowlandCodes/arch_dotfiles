@@ -11,9 +11,9 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
 -- Indentation Settings
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -80,7 +80,7 @@ vim.filetype.add({
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = {
-		spacing = 2,
+		spacing = 4,
 		prefix = "",
 	},
 	update_in_insert = true,
