@@ -179,3 +179,7 @@ alias cd="z"
 #         [[ -f .gvmrc ]] && gvm use < .gvmrc > /dev/null 2>&1
 #     fi
 # }
+
+# For Android Development
+export ANDROID_HOME=/opt/android-sdk
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
