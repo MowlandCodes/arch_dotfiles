@@ -66,7 +66,7 @@ return {
 				}),
 
 				null_ls.builtins.formatting.clang_format,
-				null_ls.builtins.formatting.pretty_php.with({ extra_args = { "--standard=PSR12" } }),
+				null_ls.builtins.formatting.pretty_php,
 				null_ls.builtins.diagnostics.djlint,
 				null_ls.builtins.diagnostics.phpcs,
 				null_ls.builtins.formatting.blade_formatter,
