@@ -56,7 +56,7 @@ set -o vi
 # Aliases
 alias ls='eza --icons --group-directories-first'
 alias ll='eza --icons --group-directories-first -lh -g --all'
-alias lr='ranger'
+alias lr='yazi'
 alias grep='grep --color=auto'
 alias conf_dwm='cd ${HOME}/suckless/dwm; nvim; make_dwm; cd -'
 alias conf_dwmblocks='cd ${HOME}/suckless/dwmblocks; nvim; make_dwmblocks; reset_dwmblocks; cd -'
@@ -165,20 +165,6 @@ complete -C /usr/bin/terraform terraform
 unalias cd 2>/dev/null
 
 alias cd="z"
-# cd() {
-#     # 1. Pindah folder pake zoxide (biar frecency tetep ke-update)
-#     # Kita panggil command 'z' yang biasanya udah di-define zoxide
-#     z "$@" || return
-#     
-#     # 2. Panggil fungsi asli GVM yang nempel di 'cd' 
-#     # Karena GVM nge-override 'cd', kita panggil shell logic-nya secara manual
-#     # Kalau folder yang kita tuju ada .gvmrc, ini bakal otomatis switch
-#     if [ -s "$GVM_ROOT/scripts/gvm" ]; then
-#         # Kita panggil function gvm dengan argumen 'use' kalau perlu 
-#         # Atau biarkan GVM nge-hook otomatis lewat logic internalnya
-#         [[ -f .gvmrc ]] && gvm use < .gvmrc > /dev/null 2>&1
-#     fi
-# }
 
 # For Android Development
 export ANDROID_HOME=/opt/android-sdk
