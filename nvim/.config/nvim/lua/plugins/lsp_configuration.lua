@@ -107,7 +107,16 @@ return {
 					},
 				},
 				tailwindcss = {
-					filetypes = { "html", "php", "blade", "htmldjango", "typescriptreact", "javascriptreact", "css" },
+					filetypes = {
+						"html",
+						"php",
+						"blade",
+						"htmldjango",
+						"typescriptreact",
+						"javascriptreact",
+						"css",
+						"astro",
+					},
 				},
 				powershell_es = {
 					bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
