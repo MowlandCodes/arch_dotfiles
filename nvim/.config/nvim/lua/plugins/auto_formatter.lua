@@ -15,6 +15,7 @@ return {
 				typescript = { "prettier", stop_after_first = true },
 				typescriptreact = { "prettier", stop_after_first = true },
 				json = { "prettier", stop_after_first = true },
+				markdown = { "markdownlint-cli2", stop_after_first = true },
 			},
 			format_on_save = {
 				timeout_ms = 300,
