@@ -10,6 +10,7 @@ return {
 
 		configs.setup({
 			ensure_installed = {
+				"astro",
 				"bash",
 				"blade",
 				"c",
@@ -30,7 +31,7 @@ return {
 				"jsdoc",
 				"json",
 				"jsonc",
-				"latex",
+				-- "latex",
 				"lua",
 				"luadoc",
 				"luap",
@@ -60,6 +61,7 @@ return {
 			auto_install = true,
 			highlight = {
 				enable = true,
+				disable = { "latex" },
 				additional_vim_regex_highlighting = true,
 			},
 			indent = {
