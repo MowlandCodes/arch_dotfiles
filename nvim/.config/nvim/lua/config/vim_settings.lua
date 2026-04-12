@@ -47,10 +47,10 @@ vim.opt.iskeyword:append("-")
 vim.opt.selection = "exclusive"
 
 -- Move lines up/down
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- Better indenting in visual mode
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
@@ -93,6 +93,18 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.INFO] = " ",
 		},
 	},
+})
+
+-- Save folds when leaving a window
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	pattern = { "*.*" }, -- match all file with any extension
+	command = "mkview",
+})
+
+-- Load folds when entering a window
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = { "*.*" }, -- match all file with any extension
+	command = "silent! loadview",
 })
 
 -- Adding EJS File Type
