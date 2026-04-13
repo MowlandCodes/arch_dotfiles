@@ -72,7 +72,7 @@ return {
 				null_ls.builtins.formatting.blade_formatter,
 				null_ls.builtins.formatting.pint,
 				null_ls.builtins.formatting.nimpretty,
-				null_ls.builtins.formatting.latexindent,
+				-- null_ls.builtins.formatting.latexindent,
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
