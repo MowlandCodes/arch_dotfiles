@@ -2,6 +2,10 @@
 # ~/.bashrc
 #
 
+# Enable colored man pages
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANROFFOPT="-c"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
