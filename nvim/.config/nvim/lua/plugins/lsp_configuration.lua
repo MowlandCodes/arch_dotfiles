@@ -138,6 +138,15 @@ return {
 				laravel_lsp = {},
 				gopls = {},
 				pyright = {},
+				yamlls = {
+					validate = true,
+					completion = true,
+					format = {
+						enable = true,
+						singleQuote = false,
+						bracketSpacing = true,
+					},
+				},
 			}
 
 			for server, config in pairs(servers) do

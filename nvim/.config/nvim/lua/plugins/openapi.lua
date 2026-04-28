@@ -1,0 +1,3 @@
+return {
+	"codeasashu/oas.nvim",
+}
