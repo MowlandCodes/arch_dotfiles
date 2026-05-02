@@ -14,6 +14,7 @@ return {
 				"bash",
 				"blade",
 				"c",
+				"cpp",
 				"comment",
 				"css",
 				"diff",
