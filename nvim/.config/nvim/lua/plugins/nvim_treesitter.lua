@@ -43,6 +43,7 @@ return {
 				"nix",
 				"proto",
 				"python",
+				"php",
 				"query",
 				"regex",
 				"rust",
