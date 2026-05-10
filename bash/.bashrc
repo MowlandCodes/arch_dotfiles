@@ -110,10 +110,10 @@ esac
 
 export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
 
-export PATH=/home/mowlandcodes/.phpenv/bin:/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH:/opt/openresty/bin:/home/mowlandcodes/pear/bin
+export PATH=/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH:/opt/openresty/bin:/home/mowlandcodes/pear/bin
 
 # PHPenv Initial
-eval "$(phpenv init -)"
+#eval "$(phpenv init -)"
 
 ###-begin-pm2-completion-###
 ### credits to npm for the completion file model
