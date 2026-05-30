@@ -173,3 +173,6 @@ alias cd="z"
 # For Android Development
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
+
+# opencode
+export PATH=/home/mowlandcodes/.opencode/bin:$PATH
