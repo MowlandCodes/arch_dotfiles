@@ -9,3 +9,5 @@ statusbar/.local/bin/pyfiglet
 statusbar/.local/bin/dotenv
 statusbar/.local/bin/netaddr
 statusbar/.local/bin
+/AGENTS.md
+/graphify-out
