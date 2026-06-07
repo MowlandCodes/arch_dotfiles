@@ -13,18 +13,17 @@
     "format": "{}"
   },
   "hyprland/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": false,
     "format": "{icon}",
-    "on-click": "activate",
+    "format-icons": {
+      "urgent": "",
+      "active": "", // focused workspace on current monitor
+      "visible": "", // focused workspace on other monitors
+      "default": "",
+      "empty": "" // persistent (created by this plugin)
+    },
     "on-scroll-up": "hyprctl dispatch split-cycleworkspaces -1",
     "on-scroll-down": "hyprctl dispatch split-cycleworkspaces +1",
-    "format-icons": {
-      "active": "",
-      "persistent": "",
-      "default": ""
-    },
-    "sort-by-number": true
+    "all-outputs": false // recommended
   },
 
   "tray": {

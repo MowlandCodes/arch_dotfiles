@@ -7,6 +7,32 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_model": {
+      "provider": "opencode",
+      "model": "free/big-pickle",
+      "enable_thinking": false
+    },
+    "favorite_models": [
+      {
+        "provider": "opencode",
+        "model": "free/big-pickle",
+        "enable_thinking": false
+      }
+    ],
+    "model_parameters": []
+  },
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "mode": "plan"
+      },
+      "type": "registry"
+    }
+  },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "redact_private_values": true,
   "telemetry": {
     "diagnostics": true,
