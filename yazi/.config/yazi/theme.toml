@@ -127,6 +127,9 @@ rules = [
 
 	# Fallback
 	{ url = "*/", fg = "#cba6f7" },
+
+    # Hidden files
+	{ url = "*", is = "hidden", bg = "#45475a" },
 ]
 
 [spot]
