@@ -125,5 +125,11 @@
     "unbind": {
       "ctrl-w right": "workspace::ActivatePaneRight"
     }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
   }
 ]
