@@ -54,7 +54,7 @@
   "edit_predictions": {
     "provider": "copilot"
   },
-  "redact_private_values": true,
+  "redact_private_values": false,
   "telemetry": {
     "diagnostics": true,
     "metrics": false
@@ -92,6 +92,14 @@
           }
         }
       }
+    }
+  },
+  "languages": {
+    "C++": {
+      "format_on_save": "on",
+      "tab_size": 4,
+      "auto_indent": "syntax_aware",
+      "formatter": "language_server"
     }
   }
 }
