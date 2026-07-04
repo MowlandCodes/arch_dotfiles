@@ -176,3 +176,5 @@ export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform
 
 # opencode
 export PATH=/home/mowlandcodes/.opencode/bin:$PATH
+
+export PATH=$PATH:/home/mowlandcodes/.spicetify
