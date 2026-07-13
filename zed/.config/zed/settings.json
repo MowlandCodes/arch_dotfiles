@@ -46,7 +46,7 @@
       "default_config_options": {
         "effort": "max",
         "model": "opencode/deepseek-v4-flash-free",
-        "mode": "plan"
+        "mode": "build"
       },
       "type": "registry"
     }

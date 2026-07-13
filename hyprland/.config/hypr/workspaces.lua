@@ -134,3 +134,10 @@ hl.window_rule({
     float = true,
     persistent_size = true,
 })
+
+hl.window_rule({
+    name = "float-spotify",
+    match = { class = "Spotify" },
+    float = true,
+    persistent_size = true,
+})
