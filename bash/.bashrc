@@ -80,7 +80,9 @@ alias venv="source .venv/bin/activate"
 PS1='[\u@\h \W]\$ '
 
 # Initial Command
-source $HOME/ble.sh/out/ble.sh
+# Disable ble.sh to avoid conflict with flyline
+# source $HOME/ble.sh/out/ble.sh
+
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 clear
@@ -178,3 +180,12 @@ export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform
 export PATH=/home/mowlandcodes/.opencode/bin:$PATH
 
 export PATH=$PATH:/home/mowlandcodes/.spicetify
+
+# Flyline - enhanced Bash experience
+enable -f /home/mowlandcodes/.local/lib/libflyline.so flyline
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mowlandcodes/.local/bin:$PATH"
+
+export OMNIROUTE_API_KEY="sk-e461eebcd82bba10-2cd96b-81c7abf3"

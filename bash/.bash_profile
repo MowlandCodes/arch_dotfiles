@@ -14,3 +14,7 @@ export PATH="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:$PATH"
 . "$HOME/.atuin/bin/env"
 
 export PATH=$PATH:/home/mowlandcodes/.spicetify
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mowlandcodes/.local/bin:$PATH"
