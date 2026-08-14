@@ -5,7 +5,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("blueman-applet") -- Bluetooth
-	hl.exec_cmd("whatsie &") -- Whatsapp
+	hl.exec_cmd("elecwhat") -- Whatsapp
 	hl.exec_cmd("vesktop") -- Discord
 	hl.exec_cmd("fdm --hidden") -- Free Download Manager (Background)
 	hl.exec_cmd([[hyprctl setcursor "Catppuccin Macchiato Lavender" 24]])

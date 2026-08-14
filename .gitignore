@@ -11,3 +11,5 @@ statusbar/.local/bin/netaddr
 statusbar/.local/bin
 /AGENTS.md
 /graphify-out
+/hyprland/.config/hypr/workspaces.conf
+/hyprland/.config/hypr/monitors.conf
