@@ -126,6 +126,9 @@
             "tab_size": 4,
             "auto_indent": "syntax_aware",
             "formatter": "language_server"
+        },
+        "Python": {
+            "language_servers": ["pylsp", "ruff", "!basedpyright"]
         }
     }
 }
