@@ -110,7 +110,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export LINGO_20_HOME="/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo"
 
 export PATH=/home/mowlandcodes/.cache/yay/lingo/src/usr/share/lingo:/home/mowlandcodes/.cargo/bin:$PATH:/opt/openresty/bin:/home/mowlandcodes/pear/bin
 
@@ -158,23 +157,12 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-pm2-completion-###
 
-. "$HOME/.atuin/bin/env"
-
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
-
 complete -C /usr/bin/terraform terraform
-
-[[ -s "/home/mowlandcodes/.gvm/scripts/gvm" ]] && source "/home/mowlandcodes/.gvm/scripts/gvm"
 
 # using zoxide
 unalias cd 2>/dev/null
 
 alias cd="z"
-
-# For Android Development
-export ANDROID_HOME=/opt/android-sdk
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
 
 # opencode
 export PATH=/home/mowlandcodes/.opencode/bin:$PATH
@@ -184,8 +172,3 @@ export PATH=$PATH:/home/mowlandcodes/.spicetify
 # Flyline - enhanced Bash experience
 enable -f /home/mowlandcodes/.local/lib/libflyline.so flyline
 
-
-# Added by Antigravity CLI installer
-export PATH="/home/mowlandcodes/.local/bin:$PATH"
-
-export OMNIROUTE_API_KEY="sk-e461eebcd82bba10-2cd96b-81c7abf3"
