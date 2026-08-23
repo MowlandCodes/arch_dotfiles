@@ -1,8 +1,0 @@
-# gitignore
-
-/sample
-/sample.zip
-/a.txt
-
-# this file was the output of "starship init bash --print-full-init"
-/starship.bash

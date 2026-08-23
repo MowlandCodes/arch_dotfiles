@@ -1,1 +1,0 @@
-integration/fzf-git.bash

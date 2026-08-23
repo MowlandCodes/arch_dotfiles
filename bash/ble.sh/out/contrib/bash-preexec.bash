@@ -1,1 +1,0 @@
-integration/bash-preexec.bash
