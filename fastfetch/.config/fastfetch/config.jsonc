@@ -18,7 +18,7 @@
     "break",
     {
       "type": "custom",
-      "format": " {##CBA6F7}  {##89b4fa}Arch Linux"
+      "format": " {##CBA6F7}  {##89b4fa}Fedora Linux"
     },
     {
       "type": "custom",
