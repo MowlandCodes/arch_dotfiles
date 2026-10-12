@@ -7,7 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "code_lens": "on",
+  "document_symbols": "off",
+  "completion_menu_item_kind": "symbol",
+  "cursor_animation": {
+    "enabled": false
+  },
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "code_lens": "off",
   "snippet_sort_order": "bottom",
   "autoscroll_on_clicks": true,
   "mouse_wheel_zoom": true,
@@ -30,13 +38,14 @@
     "coloring": "indent_aware",
   },
   "vim": {
+    "gdefault": false,
     "toggle_relative_line_numbers": false,
     "use_smartcase_find": true,
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "cursor_shape": "bar",
   "ui_font_family": "JetBrainsMono Nerd Font Propo",
@@ -48,7 +57,11 @@
     "OpenSymbol",
   ],
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "use_modifier_to_send": true,
+    "play_sound_when_agent_done": "always",
     "dock": "right",
     "default_model": {
       "provider": "opencode",
@@ -75,7 +88,10 @@
     },
   },
   "edit_predictions": {
-    "provider": "zed",
+    "copilot": {
+      "prediction_debounce": 75
+    },
+    "provider": "copilot",
   },
   "redact_private_values": false,
   "telemetry": {
@@ -102,6 +118,21 @@
     "code_actions": false,
   },
   "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
     "intelephense": {
       "settings": {
         "intelephense": {
@@ -118,21 +149,24 @@
             "onSave": true,
             "forwardSearchAfter": true,
           },
-          "forwardSearch": {
-            "executable": "zathura",
-            "args": [
-              "--synctex-forward",
-              "%l:1:%f",
-              "-x",
-              "zed %%{input}:%%{line}",
-              "%p",
-            ],
-          },
+        },
+      },
+    },
+    "gopls": {
+      "settings": {
+        "gofumpt": true,
+        "initialization_options": {
+          "gofumpt": true,
         },
       },
     },
   },
   "languages": {
+    "Go": {
+      "document_symbols": "on",
+      "format_on_save": "on",
+      "formatter": "language_server",
+    },
     "PHP": {
       "language_servers": ["!phpantom", "!phpactor", "intelephense"],
       "tab_size": 4,
@@ -149,7 +183,7 @@
       "formatter": "language_server",
     },
     "Python": {
-      "language_servers": ["pylsp", "ruff", "!basedpyright"],
+      "language_servers": ["ruff", "basedpyright"],
     },
   },
 }
