@@ -283,25 +283,25 @@ crust = "#181926"
 
 [palettes.noctalia]
 # Standard colors
-blue      = "#ae84ae"
+blue      = "#af83af"
 red       = "#fd4663"
 green     = "#8b8bc1"
-yellow    = "#9781b1"
-cyan      = "#beafd0"
+yellow    = "#9981b1"
+cyan      = "#bfafd0"
 magenta   = "#acacd3"
 white     = "#f2f2f3"
 black     = "#212130"
 
 # Extended palette (Catppuccin-compatible names)
-rosewater = "#9781b1"
+rosewater = "#9981b1"
 flamingo  = "#fd4663"
 pink      = "#acacd3"
 mauve     = "#acacd3"
 maroon    = "#fd4663"
-peach     = "#9781b1"
-teal      = "#beafd0"
-sky       = "#beafd0"
-sapphire  = "#ae84ae"
+peach     = "#9981b1"
+teal      = "#bfafd0"
+sky       = "#bfafd0"
+sapphire  = "#af83af"
 lavender  = "#acacd3"
 
 # Text shades
